@@ -1,0 +1,19 @@
+{
+    "Workstation_Hitbox":{
+        "title": "About Me",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    "Projects_Hitbox":{
+        "title": "Project Experience",
+        "content": "Here are Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    "Skills_Hitbox":{
+        "title": "Technical Skills",
+        "content": "This includes Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    "Contacts_Hitbox":{
+        "title": "Contact Me",
+        "content": "Contact me at Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }
+
+}
