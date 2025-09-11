@@ -25,12 +25,12 @@ const SidePanel = () => {
   return (
     <>
       <div className={`overlay ${isPanelOpen ? "open" : ""}`} onClick={closePanel}/>
-      
+
       <div ref={panelRef} className={`side-panel ${isPanelOpen ? "open" : ""}`}>
         <button onClick={closePanel} className="close-button">✕</button>
 
       <div className="side-panel-content">
-        <img src="images/LightMode.png" className="side-panel-full-image" />
+        <img src="images/LightModeHigh.png" className="side-panel-full-image" />
 
         <div className="side-panel-text">
           {panelContent && (
