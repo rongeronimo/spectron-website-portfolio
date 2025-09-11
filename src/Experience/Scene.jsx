@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import DarkHomeOffice from './models/Homeofficev5';
 import DarkTargets from './models/Darktargets';
 import { useFrame } from "@react-three/fiber";
-import Gridplanes from "./components/Gridplanes";
+import Gridplanes from "./components/GridPlanes";
 
 const Scene = ({pointerRef}) => {
 
