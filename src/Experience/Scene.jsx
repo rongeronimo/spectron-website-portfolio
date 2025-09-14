@@ -29,7 +29,7 @@ const Scene = ({pointerRef}) => {
     return (
         <>
             <Suspense>
-                <ambientLight intensity={6} />
+                {/*<ambientLight intensity={6}/>*/}
                 <group ref={groupRef}>
                 <DarkHomeOffice/>
                 <DarkTargets/>
