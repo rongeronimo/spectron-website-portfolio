@@ -30,8 +30,8 @@ const Experience = () => {
       delay: 0.2,
     });
 
-    // show text a bit later (after 1 s)
-    setTimeout(() => setShowWelcomeText(true), 2000);
+    // show text a bit later (after 2 s)
+    setTimeout(() => setShowWelcomeText(true), 2300);
   };
 
   return (
@@ -52,7 +52,7 @@ const Experience = () => {
           rotation={[-0.6811, 0.6517, 0.4569]}
           zoom={110}
         />
-        {/* ✅ Scene itself has its own Suspense */}
+        {/* Scene itself has its own Suspense */}
         <Scene pointerRef={pointerRef} />
       </Canvas>
 
