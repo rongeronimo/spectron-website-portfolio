@@ -66,8 +66,8 @@ const LoadingPage = ({ onComplete }) => {
       })
       .to(messageRef.current, {
         opacity: 0,
-        duration: 0.6,
-        delay: 0.5,
+        duration: 1,
+        delay: 0.8,
         ease: "power2.out",
       })
       .to(loadingScreenRef.current, {
