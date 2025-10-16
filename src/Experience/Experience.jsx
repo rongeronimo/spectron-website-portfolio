@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import Scene from './Scene';
+import Scene from "./Scene";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import { OrthographicCamera } from "@react-three/drei";
@@ -9,7 +9,8 @@ import LoadingPage from "../pages/LoadingPage/LoadingPage";
 const Experience = () => {
   const cameraRef = useRef();
   const pointerRef = useRef({ x: 0, y: 0 });
-  const [showWelcomeText, setShowWelcomeText] = useState(false);
+  const [showDarkMode, setShowDarkMode] = useState(false);
+  const [showGlowText, setShowGlowText] = useState(false);
 
   // Pointer tracking
   useEffect(() => {
@@ -22,7 +23,7 @@ const Experience = () => {
   }, []);
 
   const handleLoadingComplete = () => {
-    // fade in scene first
+    // Fade in the 3D scene
     gsap.to(".r3f-canvas", {
       opacity: 1,
       duration: 0.5,
@@ -30,8 +31,23 @@ const Experience = () => {
       delay: 0.2,
     });
 
-    // show text a bit later (after 2 s)
-    setTimeout(() => setShowWelcomeText(true), 2300);
+    // "Dark Mode." appears 2.3s after load complete
+    setTimeout(() => {
+      setShowDarkMode(true);
+
+      // Remove "Dark Mode." after animation (4.5s)
+      setTimeout(() => {
+        setShowDarkMode(false);
+
+        // Then show "Find what it glows." after a small delay
+        setTimeout(() => {
+          setShowGlowText(true);
+
+          // Hide the second text after its own animation
+          setTimeout(() => setShowGlowText(false), 4500);
+        }, 400); // small buffer before next appears
+      }, 4500);
+    }, 2300);
   };
 
   return (
@@ -41,7 +57,7 @@ const Experience = () => {
       <Canvas
         className="r3f-canvas"
         style={{
-          opacity: 0, // start invisible until overlay done
+          opacity: 0,
           transition: "opacity 1s ease",
         }}
       >
@@ -52,12 +68,15 @@ const Experience = () => {
           rotation={[-0.6811, 0.6517, 0.4569]}
           zoom={110}
         />
-        {/* Scene itself has its own Suspense */}
         <Scene pointerRef={pointerRef} />
       </Canvas>
 
-      {showWelcomeText && (
-        <div className="darkmode-text">Dark Mode.</div>
+      {showDarkMode && (
+        <div className="overlay-text">Dark Mode.</div>
+      )}
+
+      {showGlowText && (
+        <div className="glow-text">Find what glows.</div>
       )}
     </>
   );
