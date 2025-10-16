@@ -75,7 +75,7 @@
   line-height: 1.4;
 }
 
-.darkmode-text {
+.overlay-text {
   position: absolute;
   top: 30%;
   left: 13%;
@@ -101,4 +101,17 @@
   100% {
     opacity: 0;
   }
+}
+
+.glow-text {
+  position: absolute;
+  top: 30%;
+  right: 13%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 32px;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeInOut 4.5s ease-in-out forwards;
+  pointer-events: none;
 }
