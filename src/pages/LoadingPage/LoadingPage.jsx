@@ -6,6 +6,7 @@ import "./LoadingPage.scss";
 const friendlyMessages = {
   "/models/darkhomeoffice.glb": "Almost there...",
   "/models/darktargets.glb": "Opening curtains...",
+  "/models/Light1stoffice.glb": "Preparing workstation setup...",
 };
 
 const defaultMessages = [

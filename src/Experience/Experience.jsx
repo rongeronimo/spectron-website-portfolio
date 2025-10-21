@@ -2,15 +2,59 @@ import React, { useRef, useEffect, useState } from "react";
 import Scene from "./Scene";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
-import { OrthographicCamera } from "@react-three/drei";
+import { OrbitControls, OrthographicCamera } from "@react-three/drei";
 import gsap from "gsap";
 import LoadingPage from "../pages/LoadingPage/LoadingPage";
+import { useToggleRoomStore } from "../stores/toggleRoomStore.js";
 
 const Experience = () => {
   const cameraRef = useRef();
   const pointerRef = useRef({ x: 0, y: 0 });
   const [showDarkMode, setShowDarkMode] = useState(false);
   const [showGlowText, setShowGlowText] = useState(false);
+  const { isDarkRoom, setIsTransitioning } = useToggleRoomStore();
+
+  const cameraPositions = {
+    dark: {
+      position: new THREE.Vector3(31.1246, 26.695, 31.306),
+    },
+    light: {
+      position: new THREE.Vector3(42.9, 36.4, 13.5),
+    },
+  };
+
+  useEffect(() => {
+    if (!cameraRef.current) return;
+
+    setIsTransitioning(true);
+    const targetPosition = isDarkRoom
+      ? cameraPositions.dark.position
+      : cameraPositions.light.position;
+
+    const t1 = gsap.timeline({
+      onComplete: () => {
+        setIsTransitioning(false);
+      },
+    });
+
+    t1.to(cameraRef.current, {
+      zoom: 100,
+      onUpdate: () => {
+        cameraRef.current.updateProjectionMatrix();
+      },
+    })
+      .to(cameraRef.current.position, {
+        x: targetPosition.x,
+        y: targetPosition.y,
+        z: targetPosition.z,
+      })
+      .to(cameraRef.current, {
+        zoom: 110,
+        onUpdate: () => {
+          cameraRef.current.updateProjectionMatrix();
+        },
+      });
+  }, [isDarkRoom]);
 
   // Pointer tracking
   useEffect(() => {
@@ -18,6 +62,7 @@ const Experience = () => {
       pointerRef.current.x = (e.clientX / window.innerWidth) * 2 - 1;
       pointerRef.current.y = -(e.clientY / window.innerHeight) * 2 + 1;
     };
+
     window.addEventListener("pointermove", onPointerMove);
     return () => window.removeEventListener("pointermove", onPointerMove);
   }, []);
@@ -39,7 +84,7 @@ const Experience = () => {
       setTimeout(() => {
         setShowDarkMode(false);
 
-        // Then show "Find what it glows." after a small delay
+        // Then show "Find what glows." after a small delay
         setTimeout(() => {
           setShowGlowText(true);
 
@@ -56,10 +101,7 @@ const Experience = () => {
 
       <Canvas
         className="r3f-canvas"
-        style={{
-          opacity: 0,
-          transition: "opacity 1s ease",
-        }}
+        style={{ opacity: 0, transition: "opacity 1s ease" }}
       >
         <OrthographicCamera
           ref={cameraRef}
@@ -68,16 +110,12 @@ const Experience = () => {
           rotation={[-0.6811, 0.6517, 0.4569]}
           zoom={110}
         />
-        <Scene pointerRef={pointerRef} />
+        <Scene camera={cameraRef} pointerRef={pointerRef} />
+        {/* <OrbitControls /> */}
       </Canvas>
 
-      {showDarkMode && (
-        <div className="overlay-text">Dark Mode.</div>
-      )}
-
-      {showGlowText && (
-        <div className="glow-text">Find what glows.</div>
-      )}
+      {showDarkMode && <div className="overlay-text">Dark.</div>}
+      {showGlowText && <div className="glow-text">Find what glows.</div>}
     </>
   );
 };

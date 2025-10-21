@@ -8,6 +8,9 @@ export const useToggleRoomStore = create((set) => ({
         set ({
             isDarkRoom: booleanValue,
         }),
-
+    setIsTransitioning: (booleanValue) => 
+    set ({
+        isTransitioning: booleanValue,
+    }),
 
 }));
