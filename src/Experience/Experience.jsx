@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import Scene from "./Scene";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, OrthographicCamera } from "@react-three/drei";
+import { OrthographicCamera } from "@react-three/drei";
 import gsap from "gsap";
 import LoadingPage from "../pages/LoadingPage/LoadingPage";
 import { useToggleRoomStore } from "../stores/toggleRoomStore.js";
@@ -12,6 +12,7 @@ const Experience = () => {
   const pointerRef = useRef({ x: 0, y: 0 });
   const [showDarkMode, setShowDarkMode] = useState(false);
   const [showGlowText, setShowGlowText] = useState(false);
+  const [transitionText, setTransitionText] = useState("");
   const { isDarkRoom, setIsTransitioning } = useToggleRoomStore();
 
   const cameraPositions = {
@@ -27,48 +28,88 @@ const Experience = () => {
     if (!cameraRef.current) return;
 
     setIsTransitioning(true);
+
     const targetPosition = isDarkRoom
       ? cameraPositions.dark.position
       : cameraPositions.light.position;
 
-    const t1 = gsap.timeline({
+    // ✅ Conditional overlay color + text
+    const overlay = document.querySelector(".transition-overlay");
+    if (overlay) {
+      overlay.style.backgroundColor = isDarkRoom ? "black" : "white";
+    }
+    setTransitionText(isDarkRoom ? "test dark" : "test light");
+
+    // Fade in overlay
+    gsap.to(".transition-overlay", {
+      opacity: 1,
+      duration: 1.2,
+      ease: "power2.inOut",
       onComplete: () => {
-        setIsTransitioning(false);
+        // ⏱️ Delay text fade-in by 1s
+        gsap.fromTo(
+          ".transition-text",
+          { opacity: 0 },
+          { opacity: 1, duration: 0.8, delay: 1, ease: "power2.inOut" }
+        );
+
+        // Text stays for 2s, then fades out
+        gsap.to(".transition-text", {
+          opacity: 0,
+          delay: 3,
+          duration: 0.8,
+          ease: "power2.inOut",
+        });
+
+        // Move camera while overlay is up
+        const t1 = gsap.timeline({
+          delay: 0.5,
+          onComplete: () => {
+            setIsTransitioning(false);
+
+            // 🕒 Overlay fades out immediately after text finishes
+            gsap.to(".transition-overlay", {
+              opacity: 0,
+              delay: 1.5, // reduced to remove dead air
+              duration: 1,
+              ease: "power2.inOut",
+            });
+          },
+        });
+
+        t1.to(cameraRef.current, {
+          duration: 0.8,
+          ease: "power2.inOut",
+          onUpdate: () => cameraRef.current.updateProjectionMatrix(),
+        })
+          .to(cameraRef.current.position, {
+            x: targetPosition.x,
+            y: targetPosition.y,
+            z: targetPosition.z,
+            duration: 1.5,
+            ease: "power2.inOut",
+          })
+          .to(cameraRef.current, {
+            duration: 0.8,
+            ease: "power2.inOut",
+            onUpdate: () => cameraRef.current.updateProjectionMatrix(),
+          });
       },
     });
-
-    t1.to(cameraRef.current, {
-      zoom: 100,
-      onUpdate: () => {
-        cameraRef.current.updateProjectionMatrix();
-      },
-    })
-      .to(cameraRef.current.position, {
-        x: targetPosition.x,
-        y: targetPosition.y,
-        z: targetPosition.z,
-      })
-      .to(cameraRef.current, {
-        zoom: 110,
-        onUpdate: () => {
-          cameraRef.current.updateProjectionMatrix();
-        },
-      });
   }, [isDarkRoom]);
 
-  // Pointer tracking
+  // 🖱️ Pointer tracking
   useEffect(() => {
     const onPointerMove = (e) => {
       pointerRef.current.x = (e.clientX / window.innerWidth) * 2 - 1;
       pointerRef.current.y = -(e.clientY / window.innerHeight) * 2 + 1;
     };
-
     window.addEventListener("pointermove", onPointerMove);
     return () => window.removeEventListener("pointermove", onPointerMove);
   }, []);
 
+  // Loading + intro text sequence
   const handleLoadingComplete = () => {
-    // Fade in the 3D scene
     gsap.to(".r3f-canvas", {
       opacity: 1,
       duration: 0.5,
@@ -76,21 +117,14 @@ const Experience = () => {
       delay: 0.2,
     });
 
-    // "Dark Mode." appears 2.3s after load complete
     setTimeout(() => {
       setShowDarkMode(true);
-
-      // Remove "Dark Mode." after animation (4.5s)
       setTimeout(() => {
         setShowDarkMode(false);
-
-        // Then show "Find what glows." after a small delay
         setTimeout(() => {
           setShowGlowText(true);
-
-          // Hide the second text after its own animation
           setTimeout(() => setShowGlowText(false), 4500);
-        }, 400); // small buffer before next appears
+        }, 400);
       }, 4500);
     }, 2300);
   };
@@ -98,6 +132,14 @@ const Experience = () => {
   return (
     <>
       <LoadingPage onComplete={handleLoadingComplete} />
+
+      {/* Fade overlay */}
+      <div className="transition-overlay">
+        {/* Overlay text (appears after delay) */}
+        <div className="transition-text" style={{ color: isDarkRoom ? "white" : "black" }}>
+          {transitionText}
+        </div>
+      </div>
 
       <Canvas
         className="r3f-canvas"
@@ -111,7 +153,6 @@ const Experience = () => {
           zoom={110}
         />
         <Scene camera={cameraRef} pointerRef={pointerRef} />
-        {/* <OrbitControls /> */}
       </Canvas>
 
       {showDarkMode && <div className="overlay-text">Dark.</div>}
