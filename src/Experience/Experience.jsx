@@ -38,7 +38,7 @@ const Experience = () => {
     if (overlay) {
       overlay.style.backgroundColor = isDarkRoom ? "black" : "white";
     }
-    setTransitionText(isDarkRoom ? "test dark" : "test light");
+    setTransitionText(isDarkRoom ? "Lead with calm." : "Grow brighter.");
 
     // Fade in overlay
     gsap.to(".transition-overlay", {
