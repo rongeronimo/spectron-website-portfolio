@@ -33,7 +33,7 @@ const Experience = () => {
       ? cameraPositions.dark.position
       : cameraPositions.light.position;
 
-    // ✅ Conditional overlay color + text
+    // Conditional overlay color + text
     const overlay = document.querySelector(".transition-overlay");
     if (overlay) {
       overlay.style.backgroundColor = isDarkRoom ? "black" : "white";
@@ -46,7 +46,7 @@ const Experience = () => {
       duration: 1.2,
       ease: "power2.inOut",
       onComplete: () => {
-        // ⏱️ Delay text fade-in by 1s
+        // Delay text fade-in by 1s
         gsap.fromTo(
           ".transition-text",
           { opacity: 0 },
@@ -67,7 +67,7 @@ const Experience = () => {
           onComplete: () => {
             setIsTransitioning(false);
 
-            // 🕒 Overlay fades out immediately after text finishes
+            //  Overlay fades out immediately after text finishes
             gsap.to(".transition-overlay", {
               opacity: 0,
               delay: 1.5, // reduced to remove dead air
@@ -98,7 +98,7 @@ const Experience = () => {
     });
   }, [isDarkRoom]);
 
-  // 🖱️ Pointer tracking
+  // Pointer tracking
   useEffect(() => {
     const onPointerMove = (e) => {
       pointerRef.current.x = (e.clientX / window.innerWidth) * 2 - 1;
