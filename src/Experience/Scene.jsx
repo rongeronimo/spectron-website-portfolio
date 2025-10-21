@@ -94,8 +94,8 @@ const Scene = ({ pointerRef }) => {
 
       <Gridplanes
         ref = {gridPlanesRef}
-        rows={10}
-        columns={10}
+        rows={8}
+        columns={8}
         planeWidth={3}
         planeDepth={3}
         spacing={0}
