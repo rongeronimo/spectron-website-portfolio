@@ -11,33 +11,45 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('/models/Light3rdoffice.glb')
 
   const newMaterials = convertMaterialsToBasic(materials);
-
+  
   return (
     <group {...props} dispose={null}>
-      <group position={[-2.349, 1.938, -29.509]}>
-        <mesh geometry={nodes.Tessellation002_Material028_0002.geometry} material={newMaterials['WallPlate2.002_Baked']} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_1.geometry} material={newMaterials.Strawhat_Baked} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_2.geometry} material={newMaterials.StrawhatNR_Baked} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_3.geometry} material={newMaterials.Wallplates_Baked} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_4.geometry} material={newMaterials.DreamCatcher1_Baked} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_5.geometry} material={newMaterials.UltraDreamCatcher_Baked} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_6.geometry} material={newMaterials['photo-14']} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_7.geometry} material={newMaterials.frame} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_8.geometry} material={newMaterials.glass} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_9.geometry} material={newMaterials['photo-7']} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_10.geometry} material={newMaterials['frame.001']} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_11.geometry} material={newMaterials['glass.001']} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_12.geometry} material={newMaterials.VividBoho_Baked} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_13.geometry} material={newMaterials['Botanicboho_Baked.001']} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_14.geometry} material={newMaterials['LunarBoho_Baked.001']} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_15.geometry} material={newMaterials['MountainBoho_Baked.001']} />
-        <mesh geometry={nodes.Tessellation002_Material028_0002_16.geometry} material={newMaterials.WallClock_Baked} />
+      <group position={[-1.46, 2.501, -32.372]}>
+        <mesh geometry={nodes.Maillage008.geometry} material={newMaterials.basilPot_Baked} />
+        <mesh geometry={nodes.Maillage008_1.geometry} material={newMaterials.basil_Baked} />
       </group>
-      <group position={[-1.387, 1.674, -31.867]}>
-        <mesh geometry={nodes.Object_62007.geometry} material={newMaterials.Macrame2_Baked} />
-        <mesh geometry={nodes.Object_62007_1.geometry} material={newMaterials['Macrame1_Baked.001']} />
-        <mesh geometry={nodes.Object_62007_2.geometry} material={newMaterials.MacrameWood2_Baked} />
+      <group position={[-1.149, 2.311, -32.382]}>
+        <mesh geometry={nodes.grass_lambert9_0002.geometry} material={newMaterials.ShelvePlant1Pot_Baked} />
+        <mesh geometry={nodes.grass_lambert9_0002_1.geometry} material={newMaterials.ShelvePlant1_Baked} />
       </group>
+      <mesh geometry={nodes.ShelvePlant3_Baked.geometry} material={newMaterials.ShelvePlant3_Baked} position={[-1.158, 1.888, -32.43]} />
+      <group position={[-2.502, 0.94, -29.139]} rotation={[0, 0.326, 0]} scale={0.806}>
+        <mesh geometry={nodes.Plane029.geometry} material={newMaterials.BookshelfPlantPot_Baked} />
+        <mesh geometry={nodes.Plane029_1.geometry} material={newMaterials.BookshelfPlant_Baked} />
+      </group>
+      <group position={[-0.396, 1.703, -32.499]}>
+        <mesh geometry={nodes.Object_62011.geometry} material={newMaterials['Macrame1_Baked.001']} />
+        <mesh geometry={nodes.Object_62011_1.geometry} material={newMaterials.MacrameWood2_Baked} />
+        <mesh geometry={nodes.Object_62011_2.geometry} material={newMaterials['photo-14']} />
+        <mesh geometry={nodes.Object_62011_3.geometry} material={newMaterials.frame} />
+        <mesh geometry={nodes.Object_62011_4.geometry} material={newMaterials.glass} />
+        <mesh geometry={nodes.Object_62011_5.geometry} material={newMaterials['photo-7']} />
+        <mesh geometry={nodes.Object_62011_6.geometry} material={newMaterials['frame.001']} />
+        <mesh geometry={nodes.Object_62011_7.geometry} material={newMaterials['glass.001']} />
+        <mesh geometry={nodes.Object_62011_8.geometry} material={newMaterials.VividBoho_Baked} />
+        <mesh geometry={nodes.Object_62011_9.geometry} material={newMaterials['Botanicboho_Baked.001']} />
+        <mesh geometry={nodes.Object_62011_10.geometry} material={newMaterials['LunarBoho_Baked.001']} />
+        <mesh geometry={nodes.Object_62011_11.geometry} material={newMaterials['MountainBoho_Baked.001']} />
+        <mesh geometry={nodes.Object_62011_12.geometry} material={newMaterials.Wallplates_Baked} />
+        <mesh geometry={nodes.Object_62011_13.geometry} material={newMaterials['WallPlate2.002_Baked']} />
+        <mesh geometry={nodes.Object_62011_14.geometry} material={newMaterials.Strawhat_Baked} />
+        <mesh geometry={nodes.Object_62011_15.geometry} material={newMaterials.StrawhatNR_Baked} />
+        <mesh geometry={nodes.Object_62011_16.geometry} material={newMaterials.WallClock_Baked} />
+        <mesh geometry={nodes.Object_62011_17.geometry} material={newMaterials.DreamCatcher1_Baked} />
+        <mesh geometry={nodes.Object_62011_18.geometry} material={newMaterials.UltraDreamCatcher_Baked} />
+        <mesh geometry={nodes.Object_62011_19.geometry} material={newMaterials.Macrame2_Baked} />
+      </group>
+      <mesh geometry={nodes.WallCabinet_Baked.geometry} material={newMaterials['Allwood_Baked.007']} position={[-2.571, 0.359, -29.326]} />
     </group>
   )
 }

@@ -11,25 +11,25 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('/models/Light6thoffice.glb')
 
   const newMaterials = convertMaterialsToBasic(materials);
-
+  
   return (
     <group {...props} dispose={null}>
-      <group position={[-1.193, 0.615, -28.07]}>
-        <mesh geometry={nodes.Object_0034.geometry} material={newMaterials.Canvas_Baked} />
-        <mesh geometry={nodes.Object_0034_1.geometry} material={newMaterials['Canvas painting_Baked']} />
-        <mesh geometry={nodes.Object_0034_2.geometry} material={newMaterials.Saoirse_Baked} />
-        <mesh geometry={nodes.Object_0034_3.geometry} material={newMaterials['Easel.001_Baked']} />
-        <mesh geometry={nodes.Object_0034_4.geometry} material={newMaterials.Paintbrushes_Baked} />
-        <mesh geometry={nodes.Object_0034_5.geometry} material={newMaterials.Palette_Baked} />
-        <mesh geometry={nodes.Object_0034_6.geometry} material={newMaterials.Stool_Baked} />
+      <mesh geometry={nodes.CornerPlant2_Baked.geometry} material={newMaterials.CornerPlant2_Baked} position={[-1.988, 0.235, -27.618]} />
+      <mesh geometry={nodes.CornerPlant2pot_Baked.geometry} material={newMaterials.CornerPlant2pot_Baked} position={[-1.988, 0.111, -27.618]} />
+      <mesh geometry={nodes.Round_embossed_flower_carpet_Baked.geometry} material={newMaterials['Round embossed flower carpet_Baked']} position={[-0.818, 0.132, -28.171]} />
+      <mesh geometry={nodes.PillowBasket_Baked.geometry} material={newMaterials.PillowBasket_Baked} position={[-0.047, 0.265, -30.906]} />
+      <mesh geometry={nodes.Rattan_Knot_Chair2_Baked001.geometry} material={newMaterials['Rattan Knot Chair.001_Baked']} position={[-0.449, 0.377, -29.015]} rotation={[0, -1.107, 0]} />
+      <group position={[-0.841, 0.142, -29.881]} rotation={[Math.PI, -1.484, Math.PI]} scale={1.032}>
+        <mesh geometry={nodes.Plane038.geometry} material={newMaterials['peau de vache_Baked.001']} />
+        <mesh geometry={nodes.Plane038_1.geometry} material={newMaterials['Easel.001_Baked']} />
+        <mesh geometry={nodes.Plane038_2.geometry} material={newMaterials.Saoirse_Baked} />
+        <mesh geometry={nodes.Plane038_3.geometry} material={newMaterials.Paintbrushes_Baked} />
+        <mesh geometry={nodes.Plane038_4.geometry} material={newMaterials.Canvas_Baked} />
+        <mesh geometry={nodes.Plane038_5.geometry} material={newMaterials['Canvas painting_Baked']} />
+        <mesh geometry={nodes.Plane038_6.geometry} material={newMaterials.Stool_Baked} />
+        <mesh geometry={nodes.Plane038_7.geometry} material={newMaterials.Palette_Baked} />
       </group>
-      <mesh geometry={nodes.CornerPlant2_Baked.geometry} material={newMaterials.CornerPlant2_Baked} position={[-1.995, 0.445, -27.591]} />
-      <mesh geometry={nodes.CornerPlant2pot_Baked.geometry} material={newMaterials.CornerPlant2pot_Baked} position={[-1.988, 0.248, -27.618]} />
-      <mesh geometry={nodes.Round_embossed_flower_carpet_Baked.geometry} material={newMaterials['Round embossed flower carpet_Baked']} position={[-0.818, 0.136, -28.172]} />
-      <mesh geometry={nodes.PillowBasket_Baked.geometry} material={newMaterials.PillowBasket_Baked} position={[-0.047, 0.265, -30.907]} />
-      <mesh geometry={nodes.Rattan_Knot_Chair2_Baked001.geometry} material={newMaterials['Rattan Knot Chair.001_Baked']} position={[-0.439, 0.377, -29.794]} />
-      <mesh geometry={nodes.cowrug_Baked.geometry} material={newMaterials['peau de vache_Baked.001']} position={[-0.892, 0.142, -29.806]} />
-      <group position={[-0.961, 0.333, -29.846]} rotation={[Math.PI, 0, Math.PI]} scale={0.612}>
+      <group position={[-0.96, 0.141, -29.845]} rotation={[-Math.PI, 0.596, -Math.PI]} scale={0.612}>
         <mesh geometry={nodes.Sankofa_Stool010.geometry} material={newMaterials['weaving_Baked.001']} />
         <mesh geometry={nodes.Sankofa_Stool010_1.geometry} material={newMaterials['rattan_Baked.001']} />
       </group>

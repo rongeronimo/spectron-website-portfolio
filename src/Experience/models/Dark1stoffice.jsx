@@ -9,8 +9,6 @@ import { convertMaterialsToBasic } from '../utils/convertToBasic';
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF('/models/Dark1stoffice.glb')
-
-  console.log(nodes);
             
   const newMaterials = convertMaterialsToBasic(materials);
 

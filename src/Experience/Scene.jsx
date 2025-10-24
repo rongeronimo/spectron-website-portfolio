@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useState, useEffect} from "react";
+import React, { Suspense, useRef, useState, useEffect } from "react";
 import * as THREE from "three";
 import Dark1stOffice from "./models/Dark1stoffice";
 import Dark2ndOffice from "./models/Dark2ndoffice";
@@ -11,9 +11,10 @@ import Light4thHomeOffice from "./models/Light4thoffice";
 import Light5thHomeOffice from "./models/Light5thoffice";
 import Light6thHomeOffice from "./models/Light6thoffice";
 import DarkTargets from "./models/Darktargets";
+import LightTargets from "./models/Lighttargets";
 import Gridplanes from "./components/GridPlanes";
 import { useFrame } from "@react-three/fiber";
-import  { useToggleRoomStore }  from "../stores/toggleRoomStore.js";
+import { useToggleRoomStore } from "../stores/toggleRoomStore.js";
 import gsap from "gsap";
 
 const Scene = ({ pointerRef }) => {
@@ -27,33 +28,42 @@ const Scene = ({ pointerRef }) => {
   const { isDarkRoom, isTransitioning } = useToggleRoomStore();
   const [sceneReady, setSceneReady] = useState(false);
 
-  useEffect(() => { 
-    if(!gridPlanesRef.current) return;
+  // Toggle visibility instead of disposing
+  useEffect(() => {
+    if (!darkgroupRef.current || !lightgroupRef.current) return;
 
-    const targetPosition = isDarkRoom 
-    ? darkRoomGroupPosition 
-    : lightRoomGroupPosition;
+    // Wait a bit before toggling visibility 
+    const delay = 3000; // 1 second (adjust to match your overlay duration)
+    const timeout = setTimeout(() => {
+      darkgroupRef.current.visible = isDarkRoom;
+      lightgroupRef.current.visible = !isDarkRoom;
+    }, delay);
 
-    gsap.to(gridPlanesRef.current.position, {
-      x: targetPosition.x,
-      y: targetPosition.y,
-      z: targetPosition.z,
-      delay: 1,
-    });
-
+    return () => clearTimeout(timeout);
   }, [isDarkRoom]);
 
-    
+  // Slightly delay grid move for smoother transition
+    if (gridPlanesRef.current) {
+      const targetPosition = isDarkRoom
+        ? darkRoomGroupPosition
+        : lightRoomGroupPosition;
 
-  // Smooth pointer rotation animation
+      gsap.to(gridPlanesRef.current.position, {
+        x: targetPosition.x,
+        y: targetPosition.y,
+        z: targetPosition.z,
+        duration: 1,
+        delay: 0.5,
+        ease: "power2.inOut",
+      });
+    }
+
+  // Smooth pointer-based rotation
   useFrame(() => {
     if (!darkgroupRef.current || !lightgroupRef.current || !gridPlanesRef.current) return;
 
-    // console.log(cameraRef.current.position);
-    // console.log(cameraRef.current.rotation);
-
     const targetRotation = pointerRef.current.x * Math.PI * 0.02;
-    
+
     groupRotationRef.current = THREE.MathUtils.lerp(
       groupRotationRef.current,
       targetRotation,
@@ -64,17 +74,18 @@ const Scene = ({ pointerRef }) => {
     lightgroupRef.current.rotation.y = groupRotationRef.current;
     gridPlanesRef.current.rotation.y = groupRotationRef.current;
 
-    // Trigger scene-ready only once, after first frame
+    // Trigger "scene-ready" once for fade-in sync
     if (!sceneReady) {
       setSceneReady(true);
       setTimeout(() => {
         window.dispatchEvent(new Event("scene-ready"));
-      }, 500); // slight delay for smoother fade-in
+      }, 500);
     }
   });
 
   return (
     <Suspense fallback={null}>
+      {/* Dark Room */}
       <group ref={darkgroupRef}>
         <Dark1stOffice />
         <Dark2ndOffice />
@@ -83,17 +94,62 @@ const Scene = ({ pointerRef }) => {
         <DarkTargets />
       </group>
 
+      {/* Light Room */}
       <group ref={lightgroupRef} position={lightRoomGroupPosition}>
-        <Light1stHomeOffice position={[-lightRoomGroupPosition.x, -lightRoomGroupPosition.y, -lightRoomGroupPosition.z]} />
-        <Light2ndHomeOffice position={[-lightRoomGroupPosition.x, -lightRoomGroupPosition.y, -lightRoomGroupPosition.z]} />
-        <Light3rdHomeOffice position={[-lightRoomGroupPosition.x, -lightRoomGroupPosition.y, -lightRoomGroupPosition.z]} />
-        <Light4thHomeOffice position={[-lightRoomGroupPosition.x, -lightRoomGroupPosition.y, -lightRoomGroupPosition.z]} />
-        <Light5thHomeOffice position={[-lightRoomGroupPosition.x, -lightRoomGroupPosition.y, -lightRoomGroupPosition.z]} />
-        <Light6thHomeOffice position={[-lightRoomGroupPosition.x, -lightRoomGroupPosition.y, -lightRoomGroupPosition.z]} />
+        <Light1stHomeOffice
+          position={[
+            -lightRoomGroupPosition.x,
+            -lightRoomGroupPosition.y,
+            -lightRoomGroupPosition.z,
+          ]}
+        />
+        <Light2ndHomeOffice
+          position={[
+            -lightRoomGroupPosition.x,
+            -lightRoomGroupPosition.y,
+            -lightRoomGroupPosition.z,
+          ]}
+        />
+        <Light3rdHomeOffice
+          position={[
+            -lightRoomGroupPosition.x,
+            -lightRoomGroupPosition.y,
+            -lightRoomGroupPosition.z,
+          ]}
+        />
+        <Light4thHomeOffice
+          position={[
+            -lightRoomGroupPosition.x,
+            -lightRoomGroupPosition.y,
+            -lightRoomGroupPosition.z,
+          ]}
+        />
+        <Light5thHomeOffice
+          position={[
+            -lightRoomGroupPosition.x,
+            -lightRoomGroupPosition.y,
+            -lightRoomGroupPosition.z,
+          ]}
+        />
+        <Light6thHomeOffice
+          position={[
+            -lightRoomGroupPosition.x,
+            -lightRoomGroupPosition.y,
+            -lightRoomGroupPosition.z,
+          ]}
+        />
+        <LightTargets
+          position={[
+            -lightRoomGroupPosition.x,
+            -lightRoomGroupPosition.y,
+            -lightRoomGroupPosition.z,
+          ]}
+        />  
       </group>
 
+      {/* Grid */}
       <Gridplanes
-        ref = {gridPlanesRef}
+        ref={gridPlanesRef}
         rows={8}
         columns={8}
         planeWidth={3}

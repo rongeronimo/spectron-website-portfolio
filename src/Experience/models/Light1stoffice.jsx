@@ -9,53 +9,50 @@ import { convertMaterialsToBasic } from '../utils/convertToBasic';
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF('/models/Light1stoffice.glb')
-          
+
   const newMaterials = convertMaterialsToBasic(materials);
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Backdrop_Baked.geometry} material={newMaterials['Backdrop_Baked.003']} position={[0, -0.01, -29.999]} />
-      <mesh geometry={nodes.RattanTrashcan_Baked.geometry} material={newMaterials.RattanTrashcan_Baked} position={[1.605, 0.197, -27.726]} />
-      <mesh geometry={nodes.Monitor_Baked.geometry} material={newMaterials.Monitor_Baked} position={[1.192, 1.027, -28.41]} />
-      <mesh geometry={nodes.MousePad_Baked.geometry} material={newMaterials.MousePad_Baked} position={[1.499, 0.721, -28.526]} />
-      <group position={[1.55, 0.726, -28.132]}>
-        <mesh geometry={nodes.Cube011.geometry} material={newMaterials.Iphone_Baked} />
-        <mesh geometry={nodes.Cube011_1.geometry} material={newMaterials.PowerBank_Baked} />
+      <mesh geometry={nodes.Backdrop_Baked.geometry} material={newMaterials['Backdrop_Baked.003']} position={[0, -0.01, -29.998]} />
+      <group position={[1.486, 0.147, -28.476]}>
+        <mesh geometry={nodes.pCube209_slipa_0001.geometry} material={newMaterials.Slippers_Baked} />
+        <mesh geometry={nodes.pCube209_slipa_0001_1.geometry} material={newMaterials['Desk Top_Baked']} />
+        <mesh geometry={nodes.pCube209_slipa_0001_2.geometry} material={newMaterials.RattanCompchair_Baked} />
+        <mesh geometry={nodes.pCube209_slipa_0001_3.geometry} material={newMaterials.UnderBasket_Baked} />
       </group>
-      <mesh geometry={nodes.CottonVase_Baked.geometry} material={newMaterials.CottonVase_Baked} position={[1.107, 0.955, -27.986]} />
-      <mesh geometry={nodes.Decorative_vase_with_branches001_Baked.geometry} material={newMaterials['Decorative vase with branches.001_Baked']} position={[1.133, 0.981, -29.362]} />
-      <mesh geometry={nodes.Tulips_Baked.geometry} material={newMaterials.Tulips_Baked} position={[1.411, 0.825, -29.446]} />
-      <group position={[1.505, 0.729, -28.283]}>
-        <mesh geometry={nodes.Phone001.geometry} material={newMaterials.DialPhone_Baked} />
-        <mesh geometry={nodes.Phone001_1.geometry} material={newMaterials.BinderStacks_Baked} />
-        <mesh geometry={nodes.Phone001_2.geometry} material={newMaterials.Tablet_blinn2_0_Baked} />
-        <mesh geometry={nodes.Phone001_3.geometry} material={newMaterials.Pidgey_Baked} />
-        <mesh geometry={nodes.Phone001_4.geometry} material={newMaterials['Circle_Material.002_0_Baked']} />
-        <mesh geometry={nodes.Phone001_5.geometry} material={newMaterials['WoodCoaster.011_Baked']} />
-        <mesh geometry={nodes.Phone001_6.geometry} material={newMaterials.Keyboard_Baked} />
-        <mesh geometry={nodes.Phone001_7.geometry} material={newMaterials.Mouse_Baked} />
-        <mesh geometry={nodes.Phone001_8.geometry} material={newMaterials.CatLamp_Baked} />
-        <mesh geometry={nodes.Phone001_9.geometry} material={newMaterials.NotebookPen_Baked} />
-        <mesh geometry={nodes.Phone001_10.geometry} material={newMaterials.PencilHolder_Baked} />
-        <mesh geometry={nodes.Phone001_11.geometry} material={newMaterials.DeskClock_Baked} />
-        <mesh geometry={nodes.Phone001_12.geometry} material={newMaterials['Coffee mug n5_Baked']} />
+      <mesh geometry={nodes.RattanTrashcan_Baked.geometry} material={newMaterials.RattanTrashcan_Baked} position={[1.605, 0.131, -27.725]} />
+      <mesh geometry={nodes.BinderStacks_Baked.geometry} material={newMaterials.BinderStacks_Baked} position={[2.296, 0.605, -29.329]} />
+      <mesh geometry={nodes.Laptop_Baked.geometry} material={newMaterials.Laptop_Baked} position={[1.469, 0.727, -29.325]} />
+      <mesh geometry={nodes.MousePad_Baked.geometry} material={newMaterials.MousePad_Baked} position={[1.499, 0.721, -28.525]} />
+      <mesh geometry={nodes.Iphone_Baked.geometry} material={newMaterials.Iphone_Baked} position={[1.588, 0.727, -28.151]} />
+      <mesh geometry={nodes.CottonVase_Baked.geometry} material={newMaterials.CottonVase_Baked} position={[1.093, 0.72, -27.974]} />
+      <mesh geometry={nodes.PowerBank_Baked.geometry} material={newMaterials.PowerBank_Baked} position={[1.303, 0.729, -27.973]} />
+      <mesh geometry={nodes.Decorative_vase_with_branches001_Baked.geometry} material={newMaterials['Decorative vase with branches.001_Baked']} position={[1.133, 0.981, -29.361]} rotation={[0, 0.663, 0]} />
+      <mesh geometry={nodes.Tulips_Baked.geometry} material={newMaterials.Tulips_Baked} position={[1.386, 0.835, -29.439]} />
+      <group position={[0.646, 0.783, -27.997]}>
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001.geometry} material={newMaterials.LAMP_SHADE_GRAY_Baked} />
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001_1.geometry} material={newMaterials.DialPhone_Baked} />
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001_2.geometry} material={newMaterials.Tablet_blinn2_0_Baked} />
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001_3.geometry} material={newMaterials.Pidgey_Baked} />
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001_4.geometry} material={newMaterials.NotebookPen_Baked} />
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001_5.geometry} material={newMaterials.Monitor_Baked} />
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001_6.geometry} material={newMaterials.DeskClock_Baked} />
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001_7.geometry} material={newMaterials.Keyboard_Baked} />
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001_8.geometry} material={newMaterials.CatLamp_Baked} />
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001_9.geometry} material={newMaterials.Mouse_Baked} />
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001_10.geometry} material={newMaterials.PencilHolder_Baked} />
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001_11.geometry} material={newMaterials['WoodCoaster.011_Baked']} />
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001_12.geometry} material={newMaterials['Coffee mug n5_Baked']} />
+        <mesh geometry={nodes.LAMP_SHADE_GRAY001_13.geometry} material={newMaterials['Circle_Material.002_0_Baked']} />
       </group>
-      <group position={[1.24, 2.642, -32.431]}>
-        <mesh geometry={nodes.Cube041.geometry} material={newMaterials.Walls_Baked} />
-        <mesh geometry={nodes.Cube041_1.geometry} material={newMaterials.Floor_Baked} />
-        <mesh geometry={nodes.Cube041_2.geometry} material={newMaterials.WindowFrame_Baked} />
-        <mesh geometry={nodes.Cube041_3.geometry} material={newMaterials['Antler trophy display_Baked']} />
+      <group position={[1.244, 2.56, -32.515]}>
+        <mesh geometry={nodes.Circle010.geometry} material={newMaterials['Antler trophy display_Baked']} />
+        <mesh geometry={nodes.Circle010_1.geometry} material={newMaterials.Floor_Baked} />
+        <mesh geometry={nodes.Circle010_2.geometry} material={newMaterials.Walls_Baked} />
       </group>
-      <mesh geometry={nodes.LAMP_SHADE_GRAY_Baked.geometry} material={newMaterials.LAMP_SHADE_GRAY_Baked} position={[0.646, 0.638, -27.998]} />
-      <mesh geometry={nodes.Laptop_Baked.geometry} material={newMaterials.Laptop_Baked} position={[1.365, 0.738, -29.19]} />
-      <group position={[1.842, 0.456, -28.625]}>
-        <mesh geometry={nodes.pCube209_slipa_0031.geometry} material={newMaterials.Slippers_Baked} />
-        <mesh geometry={nodes.pCube209_slipa_0031_1.geometry} material={newMaterials['Desk Top_Baked']} />
-        <mesh geometry={nodes.pCube209_slipa_0031_2.geometry} material={newMaterials.RattanCompchair_Baked} />
-      </group>
-      <mesh geometry={nodes.UnderBasket_Baked.geometry} material={newMaterials['UnderBasket_Baked.001']} position={[1.408, 0.447, -29.324]} />
-      <mesh geometry={nodes.MonitorScreen.geometry} material={newMaterials.Monitor_Baked} position={[1.246, 0.99, -28.41]} />
-      <mesh geometry={nodes.LaptopScreen.geometry} material={newMaterials.Laptop_Baked} position={[1.326, 0.824, -29.263]} />
+      <mesh geometry={nodes.LaptopScreen.geometry} material={newMaterials.Laptop_Baked} position={[1.469, 0.727, -29.325]} />
+      <mesh geometry={nodes.MonitorScreen.geometry} material={newMaterials.Monitor_Baked} position={[1.192, 1.027, -28.409]} />
     </group>
   )
 }
