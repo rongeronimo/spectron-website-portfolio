@@ -1,10 +1,64 @@
 .toggle-button {
   position: fixed;
-  top: 5%;
-  left: 5%;
+  top: 7%;
+  right: 7%;
   z-index: 100;
   cursor: pointer;
+
+  width: 118px;
+  height: 47px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+
+  // Remove any default border “bleed”
+  border: none;
+  background-clip: padding-box;
+
+  // Custom simulated border
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 2px;
+    border: 2px solid transparent;
+    pointer-events: none;
+    transition: border-color 0.3s ease;
+  }
+
+  // Dark room: white border
+  &.dark::before {
+    border-color: white;
+  }
+
+  // Light room: black border
+  &.light::before {
+    border-color: black;
+  }
+
+  // Hover state → gold border + pop effect
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:hover::before {
+    border-color: #c9a857;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
+
 
 .transition-overlay {
   position: fixed;
@@ -15,7 +69,7 @@
   background-color: black;
   opacity: 0;
   pointer-events: none;
-  z-index: 10;
+  z-index: 9999; // 👈 Make sure it covers everything
   transition: opacity 1s ease;
 }
 
@@ -26,9 +80,10 @@
   transform: translate(-50%, -50%);
   font-size: 32px;
   font-weight: 300;
-  color: black; // default, you can override dynamically in JS
+  color: black;
   opacity: 0;
   pointer-events: none;
   user-select: none;
   transition: opacity 0.5s ease;
+  z-index: 10000; // 👈 Keep text above overlay background
 }

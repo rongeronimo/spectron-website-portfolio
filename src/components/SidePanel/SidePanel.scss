@@ -35,7 +35,6 @@
   overflow-y: auto;
 }
 
-
 /* Keep your header and description styles */
 .panel-header {
   font-size: 2rem;
@@ -62,7 +61,6 @@
   max-width: 95%;
   margin-bottom: 1.5rem;
 }
-
 
 .close-button {
   position: absolute;
@@ -111,3 +109,28 @@
   pointer-events: auto; /* now it can block clicks if you want */
 }
 
+/* === LIGHT MODE VARIATION === */
+.side-panel.light-mode {
+  background-color: #ffffff; // white background
+
+  .panel-header {
+    color: #000000; // header text
+  }
+
+  .panel-content-description {
+    color: #222222; // description text
+  }
+
+  .close-button {
+    background: #000000;
+    border-color: #000000;
+    color: #ffffff;
+
+    &:hover {
+      background: #c9a857;
+      border-color: #c9a857;
+      color: #ffffff;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+}

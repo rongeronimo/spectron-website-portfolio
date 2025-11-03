@@ -11,7 +11,7 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('/models/Light4thoffice.glb')
 
   const newMaterials = convertMaterialsToBasic(materials);
-  
+
   return (
     <group {...props} dispose={null}>
       <group position={[-2.237, 1.085, -32.266]}>
@@ -43,12 +43,12 @@ export default function Model(props) {
         <mesh geometry={nodes.Plane030_8.geometry} material={newMaterials.shelves_baked} />
       </group>
       <mesh geometry={nodes.BookStack4_Baked.geometry} material={newMaterials.BooksMerge_Baked} position={[-2.609, 1.615, -30.042]} />
-      <group position={[-2.565, 1.944, -29.972]}>
-        <mesh geometry={nodes.Maillage016.geometry} material={newMaterials.stackbooks_bake} />
-        <mesh geometry={nodes.Maillage016_1.geometry} material={newMaterials.stackofbooks2_bake} />
-      </group>
       <mesh geometry={nodes.CornerShelf_Bake.geometry} material={newMaterials['Material.082']} position={[-2.271, 1.532, -32.398]} />
       <mesh geometry={nodes.Magz_Sub_bake.geometry} material={newMaterials.Magz_bake} position={[-2.502, 1.638, -28.751]} />
+      <group position={[-2.565, 1.898, -29.972]}>
+        <mesh geometry={nodes.Maillage004.geometry} material={newMaterials.stackbooks_bake} />
+        <mesh geometry={nodes.Maillage004_1.geometry} material={newMaterials.stackofbooks2_bake} />
+      </group>
     </group>
   )
 }

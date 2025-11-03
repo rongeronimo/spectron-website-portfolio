@@ -34,7 +34,6 @@ export default function Model(props) {
       pulseGroups.forEach((ref, i) => {
         if (!ref.current) return;
 
-        // Make visible after a short stagger delay
         setTimeout(() => {
           ref.current.visible = true;
           ref.current.scale.set(0.5, 0.5, 0.5);
@@ -42,7 +41,6 @@ export default function Model(props) {
             ring.material.opacity = 0;
           });
 
-          // Fade + scale animation
           gsap.to(ref.current.scale, {
             x: 1,
             y: 1,
@@ -56,9 +54,9 @@ export default function Model(props) {
             duration: 1.5,
             ease: "power2.out",
           });
-        }, i * 1000); // stagger each group by 1s
+        }, i * 1000);
       });
-    }, 15000); // wait 15 seconds before starting the sequence
+    }, 15000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -66,13 +64,11 @@ export default function Model(props) {
   // Base materials
   const whiteMaterial = new THREE.MeshBasicMaterial({
     color: 0xffffff,
-    emissive: 0xffffff,
-    emissiveIntensity: 0,
     transparent: false,
     opacity: 1,
   });
 
-  // Helper to create unique pulse materials (prevents shared fade bug)
+  // Pulse material (glow rings)
   const createPulseMaterial = () =>
     new THREE.MeshBasicMaterial({
       color: 0xffffff,
@@ -97,14 +93,6 @@ export default function Model(props) {
     contacts: false,
   });
 
-  // Once faded, don't reappear
-  const fadedState = useRef({
-    about: false,
-    skills: false,
-    projects: false,
-    contacts: false,
-  });
-
   // Pulse animation loop
   useFrame(({ clock }) => {
     if (!showPulses) return;
@@ -118,7 +106,7 @@ export default function Model(props) {
     ];
 
     pulseRefs.forEach(({ ref, key }) => {
-      if (!ref.current || fadedState.current[key]) return;
+      if (!ref.current) return;
       if (!hoverState.current[key]) {
         ref.current.children.forEach((ring, i) => {
           const delay = i * 0.5;
@@ -140,12 +128,12 @@ export default function Model(props) {
     Contacts_Hitbox: { ref: contactsAnimRef, pulse: contactsPulseRef, key: "contacts" },
   };
 
-  // Hover scaling — also fades out pulse circles permanently
+  // Hover scaling — fades pulse out on hover, fades back in when hover ends
   const onHover = (key, isHovering) => {
     const animObject = animationPairs[key];
     if (!animObject?.ref.current) return;
 
-    // Scale animation
+    // Animate scaling of the target indicator
     gsap.to(animObject.ref.current.scale, {
       x: isHovering ? 1 : 0,
       y: isHovering ? 1 : 0,
@@ -154,29 +142,22 @@ export default function Model(props) {
       ease: "power2.out",
     });
 
-    // Fade out pulse when scaling in (once only)
-    if (isHovering && !fadedState.current[animObject.key]) {
-      const pulseGroup = animObject.pulse.current;
-      if (pulseGroup) {
-        fadedState.current[animObject.key] = true;
-
-        pulseGroup.children.forEach((ring) => {
-          gsap.to(ring.material, {
-            opacity: 0,
-            duration: 1.2,
-            ease: "power2.out",
-          });
+    const pulseGroup = animObject.pulse.current;
+    if (pulseGroup) {
+      // When hovering → fade out pulse
+      if (isHovering) {
+        gsap.to(pulseGroup.children.map((r) => r.material), {
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
         });
-
-        gsap.to(pulseGroup.scale, {
-          x: 0.8,
-          y: 0.8,
-          z: 0.8,
+      } else {
+        // When hover ends → fade back in
+        gsap.to(pulseGroup.children.map((r) => r.material), {
+          opacity: 0.15,
           duration: 1.2,
           ease: "power2.out",
-          onComplete: () => {
-            pulseGroup.visible = false;
-          },
+          delay: 0.3,
         });
       }
     }
@@ -343,4 +324,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("/models/darktargets.glb");
+useGLTF.preload("/darktargets.glb");

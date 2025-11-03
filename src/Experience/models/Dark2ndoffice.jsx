@@ -7,12 +7,11 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 import { convertMaterialsToBasic } from '../utils/convertToBasic';
 
-
 export default function Model(props) {
   const { nodes, materials } = useGLTF('/models/Dark2ndoffice.glb')
 
   const newMaterials = convertMaterialsToBasic(materials);
-  
+
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Phone15_Baked.geometry} material={newMaterials.Phone15_Baked} position={[0.95, 0.832, 0.706]} />

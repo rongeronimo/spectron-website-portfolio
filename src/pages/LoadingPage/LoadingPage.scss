@@ -88,6 +88,20 @@
   pointer-events: none;
 }
 
+.overlay-text2 {
+  position: absolute;
+  top: 30%;
+  left: 13%;
+  transform: translateY(-50%);
+  color: black;
+  font-size: 32px;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeInOut 4.5s ease-in-out forwards;
+  pointer-events: none;
+
+}
+
 @keyframes fadeInOut {
   0% {
     opacity: 0;
@@ -109,6 +123,19 @@
   right: 13%;
   transform: translateY(-50%);
   color: white;
+  font-size: 32px;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeInOut 4.5s ease-in-out forwards;
+  pointer-events: none;
+}
+
+.glow-text2 {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  transform: translateY(-50%);
+  color: black;
   font-size: 32px;
   font-weight: 300;
   opacity: 0;

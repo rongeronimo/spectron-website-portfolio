@@ -11,18 +11,18 @@ const Experience = () => {
   const cameraRef = useRef();
   const pointerRef = useRef({ x: 0, y: 0 });
   const [showDarkMode, setShowDarkMode] = useState(false);
+  const [showLightMode, setShowLightMode] = useState(false);
   const [showGlowText, setShowGlowText] = useState(false);
+  const [showGlowText2, setShowGlowText2] = useState(false);
   const [transitionText, setTransitionText] = useState("");
   const { isDarkRoom, setIsTransitioning } = useToggleRoomStore();
 
   const cameraPositions = {
-    dark: {
-      position: new THREE.Vector3(31.1246, 26.695, 31.306),
-    },
-    light: {
-      position: new THREE.Vector3(42.9, 36.4, 13.5),
-    },
+      dark: { position: new THREE.Vector3(31.1246, 26.695, 31.306) },
+      light: { position: new THREE.Vector3(42.9, 36.4, 13.5) },
   };
+
+  const switchTextDelay = 1500; // delay before showing overlay text after transition
 
   useEffect(() => {
     if (!cameraRef.current) return;
@@ -33,27 +33,23 @@ const Experience = () => {
       ? cameraPositions.dark.position
       : cameraPositions.light.position;
 
-    // Conditional overlay color + text
     const overlay = document.querySelector(".transition-overlay");
-    if (overlay) {
-      overlay.style.backgroundColor = isDarkRoom ? "black" : "white";
-    }
+    if (overlay) overlay.style.backgroundColor = isDarkRoom ? "black" : "white";
+
     setTransitionText(isDarkRoom ? "Lead with calm." : "Grow brighter.");
 
-    // Fade in overlay
+    // Fade-in overlay + transition text
     gsap.to(".transition-overlay", {
       opacity: 1,
       duration: 1.2,
       ease: "power2.inOut",
       onComplete: () => {
-        // Delay text fade-in by 1s
         gsap.fromTo(
           ".transition-text",
           { opacity: 0 },
           { opacity: 1, duration: 0.8, delay: 1, ease: "power2.inOut" }
         );
 
-        // Text stays for 2s, then fades out
         gsap.to(".transition-text", {
           opacity: 0,
           delay: 3,
@@ -61,22 +57,132 @@ const Experience = () => {
           ease: "power2.inOut",
         });
 
-        // Move camera while overlay is up
         const t1 = gsap.timeline({
           delay: 0.5,
           onComplete: () => {
             setIsTransitioning(false);
 
-            //  Overlay fades out immediately after text finishes
+            // fade overlay back out after transition
             gsap.to(".transition-overlay", {
               opacity: 0,
-              delay: 1.5, // reduced to remove dead air
+              delay: 1.5,
               duration: 1,
               ease: "power2.inOut",
+              onComplete: () => {
+                // delay before showing overlay text
+                setTimeout(() => {
+                  if (isDarkRoom) {
+                    // Entering Dark room
+                    setShowDarkMode(true);
+                    requestAnimationFrame(() => {
+                      gsap.fromTo(
+                        ".overlay-text",
+                        { opacity: 0 },
+                        {
+                          opacity: 1,
+                          duration: 1.2,
+                          ease: "power2.inOut",
+                          onComplete: () => {
+                            gsap.to(".overlay-text", {
+                              opacity: 0,
+                              delay: 2.5,
+                              duration: 1.5,
+                              ease: "power2.inOut",
+                              onComplete: () => {
+                                setShowDarkMode(false);
+
+                                // show "Find what glows." after "Dark." fades out
+                                setTimeout(() => {
+                                  setShowGlowText(true);
+                                  requestAnimationFrame(() => {
+                                    const tl = gsap.timeline({
+                                      onComplete: () => setShowGlowText(false),
+                                    });
+
+                                    tl.fromTo(
+                                      ".glow-text",
+                                      { opacity: 0 },
+                                      {
+                                        opacity: 1,
+                                        duration: 1.2,
+                                        ease: "power2.inOut",
+                                      }
+                                    );
+
+                                    tl.to(".glow-text", {
+                                      opacity: 0,
+                                      delay: 3,
+                                      duration: 1.5,
+                                      ease: "power2.inOut",
+                                    });
+                                  });
+                                }, 400);
+                              },
+                            });
+                          },
+                        }
+                      );
+                    });
+                  } else {
+                    // Entering Light room
+                    setShowLightMode(true);
+                    requestAnimationFrame(() => {
+                      gsap.fromTo(
+                        ".overlay-text2",
+                        { opacity: 0 },
+                        {
+                          opacity: 1,
+                          duration: 1.2,
+                          ease: "power2.inOut",
+                          onComplete: () => {
+                            gsap.to(".overlay-text2", {
+                              opacity: 0,
+                              delay: 2.5,
+                              duration: 1.5,
+                              ease: "power2.inOut",
+                              onComplete: () => {
+                                setShowLightMode(false);
+
+                                // show "Reflect with intent." after "Light." fades out
+                                setTimeout(() => {
+                                  setShowGlowText2(true);
+                                  requestAnimationFrame(() => {
+                                    const tl = gsap.timeline({
+                                      onComplete: () => setShowGlowText2(false),
+                                    });
+
+                                    tl.fromTo(
+                                      ".glow-text2",
+                                      { opacity: 0 },
+                                      {
+                                        opacity: 1,
+                                        duration: 1.2,
+                                        ease: "power2.inOut",
+                                      }
+                                    );
+
+                                    tl.to(".glow-text2", {
+                                      opacity: 0,
+                                      delay: 3,
+                                      duration: 1.5,
+                                      ease: "power2.inOut",
+                                    });
+                                  });
+                                }, 400);
+                              },
+                            });
+                          },
+                        }
+                      );
+                    });
+                  }
+                }, switchTextDelay);
+              },
             });
           },
         });
 
+        // camera move animation
         t1.to(cameraRef.current, {
           duration: 0.8,
           ease: "power2.inOut",
@@ -108,7 +214,7 @@ const Experience = () => {
     return () => window.removeEventListener("pointermove", onPointerMove);
   }, []);
 
-  // Loading + intro text sequence
+  // Loading complete animation sequence
   const handleLoadingComplete = () => {
     gsap.to(".r3f-canvas", {
       opacity: 1,
@@ -127,17 +233,17 @@ const Experience = () => {
         }, 400);
       }, 4500);
     }, 2300);
-
   };
 
   return (
     <>
       <LoadingPage onComplete={handleLoadingComplete} />
 
-      {/* Fade overlay */}
       <div className="transition-overlay">
-        {/* Overlay text (appears after delay) */}
-        <div className="transition-text" style={{ color: isDarkRoom ? "white" : "black" }}>
+        <div
+          className="transition-text"
+          style={{ color: isDarkRoom ? "white" : "black" }}
+        >
           {transitionText}
         </div>
       </div>
@@ -157,7 +263,9 @@ const Experience = () => {
       </Canvas>
 
       {showDarkMode && <div className="overlay-text">Dark.</div>}
+      {showLightMode && <div className="overlay-text2">Light.</div>}
       {showGlowText && <div className="glow-text">Find what glows.</div>}
+      {showGlowText2 && <div className="glow-text2">Reflect with intent.</div>}
     </>
   );
 };

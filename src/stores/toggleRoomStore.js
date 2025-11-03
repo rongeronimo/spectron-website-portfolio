@@ -2,7 +2,7 @@ import { create } from 'zustand'
 
 export const useToggleRoomStore = create((set) => ({
     isDarkRoom: true,
-    panelContent: null,
+    isTransitioning: false,
 
     setDarkRoom: (booleanValue) => 
         set ({

@@ -18,28 +18,26 @@ export default function Model(props) {
         <mesh geometry={nodes.Circle007.geometry} material={newMaterials.ModularPot_Baked} />
         <mesh geometry={nodes.Circle007_1.geometry} material={newMaterials.FEUILLE_Baked} />
         <mesh geometry={nodes.Circle007_2.geometry} material={newMaterials.FEUILLE2_Baked} />
+        <mesh geometry={nodes.Circle007_3.geometry} material={newMaterials['Fiber stick_Baked']} />
+        <mesh geometry={nodes.Circle007_4.geometry} material={newMaterials.Vase_Baked} />
       </group>
-      <group position={[-2.124, 0.672, -31.004]}>
-        <mesh geometry={nodes.Cylinder013_silverball_record_0006.geometry} material={newMaterials.VinylPlayer_Baked} />
-        <mesh geometry={nodes.Cylinder013_silverball_record_0006_1.geometry} material={newMaterials.Bambino_Baked} />
-        <mesh geometry={nodes.Cylinder013_silverball_record_0006_2.geometry} material={newMaterials.Radio_Baked} />
-        <mesh geometry={nodes.Cylinder013_silverball_record_0006_3.geometry} material={newMaterials['BohoTable_Baked.001']} />
-        <mesh geometry={nodes.Cylinder013_silverball_record_0006_4.geometry} material={newMaterials['WhiteGuitar_Baked.001']} />
+      <group position={[-2.105, 0.543, -30.387]}>
+        <mesh geometry={nodes.Cylinder013_silverball_record_0005.geometry} material={newMaterials.VinylPlayer_Baked} />
+        <mesh geometry={nodes.Cylinder013_silverball_record_0005_1.geometry} material={newMaterials.Bambino_Baked} />
+        <mesh geometry={nodes.Cylinder013_silverball_record_0005_2.geometry} material={newMaterials.Radio_Baked} />
+        <mesh geometry={nodes.Cylinder013_silverball_record_0005_3.geometry} material={newMaterials['WhiteGuitar_Baked.001']} />
+        <mesh geometry={nodes.Cylinder013_silverball_record_0005_4.geometry} material={newMaterials['Boholshit_Baked.001']} />
       </group>
-      <group position={[-1.703, 0.344, -32.203]}>
-        <mesh geometry={nodes.Mesh009.geometry} material={newMaterials['Fiber stick_Baked']} />
-        <mesh geometry={nodes.Mesh009_1.geometry} material={newMaterials.Vase_Baked} />
-      </group>
+      <mesh geometry={nodes.CatCushion_Baked.geometry} material={newMaterials.CatCushion_Baked} position={[-1.07, 0.16, -32.191]} />
       <mesh geometry={nodes.Leaves_Baked.geometry} material={newMaterials.Leaves_Baked} position={[-1.737, 0.757, -32.231]} />
       <group position={[-0.644, 0.14, -31.918]} rotation={[0, -1.571, 0]} scale={[0.752, 0.713, 0.752]}>
-        <mesh geometry={nodes.Plane024.geometry} material={newMaterials['Tapis 22_Baked.002']} />
-        <mesh geometry={nodes.Plane024_1.geometry} material={newMaterials.CattoBed_Baked} />
-        <mesh geometry={nodes.Plane024_2.geometry} material={newMaterials.CatTree_Baked} />
-        <mesh geometry={nodes.Plane024_3.geometry} material={newMaterials.Catto_Baked} />
-        <mesh geometry={nodes.Plane024_4.geometry} material={newMaterials.PetBowl_Baked} />
-        <mesh geometry={nodes.Plane024_5.geometry} material={newMaterials.CatHouse_Baked} />
-        <mesh geometry={nodes.Plane024_6.geometry} material={newMaterials['Panier chat_Baked']} />
-        <mesh geometry={nodes.Plane024_7.geometry} material={newMaterials.CatScratch_Baked} />
+        <mesh geometry={nodes.Plane021.geometry} material={newMaterials['Tapis 22_Baked.002']} />
+        <mesh geometry={nodes.Plane021_1.geometry} material={newMaterials.CatScratch_Baked} />
+        <mesh geometry={nodes.Plane021_2.geometry} material={newMaterials.CatHouse_Baked} />
+        <mesh geometry={nodes.Plane021_3.geometry} material={newMaterials.CatTree_Baked} />
+        <mesh geometry={nodes.Plane021_4.geometry} material={newMaterials.Catto_Baked} />
+        <mesh geometry={nodes.Plane021_5.geometry} material={newMaterials.CattoBed_Baked} />
+        <mesh geometry={nodes.Plane021_6.geometry} material={newMaterials.PetBowl_Baked} />
       </group>
     </group>
   )

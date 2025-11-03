@@ -17,7 +17,7 @@ import { useFrame } from "@react-three/fiber";
 import { useToggleRoomStore } from "../stores/toggleRoomStore.js";
 import gsap from "gsap";
 
-const Scene = ({ pointerRef }) => {
+const Scene = ({ pointerRef}) => {
   const darkgroupRef = useRef();
   const lightgroupRef = useRef();
   const gridPlanesRef = useRef();
@@ -91,7 +91,7 @@ const Scene = ({ pointerRef }) => {
         <Dark2ndOffice />
         <Dark3rdOffice />
         <Dark4thOffice />
-        <DarkTargets />
+        <DarkTargets/>
       </group>
 
       {/* Light Room */}
@@ -150,7 +150,7 @@ const Scene = ({ pointerRef }) => {
       {/* Grid */}
       <Gridplanes
         ref={gridPlanesRef}
-        rows={8}
+        rows={8}no
         columns={8}
         planeWidth={3}
         planeDepth={3}
