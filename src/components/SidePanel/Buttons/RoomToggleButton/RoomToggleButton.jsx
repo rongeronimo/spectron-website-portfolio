@@ -4,7 +4,7 @@ import { useToggleRoomStore } from "../../../../stores/toggleRoomStore.js";
 import { useUiStore } from "../../../../stores/uiStore.js";
 
 // ✅ Import images directly — React will resolve their paths correctly
-import darkButton from "../../../../images/darkButton.png";
+import darkButton from "../../../../images/darkbutton.png";
 import darkHovered from "../../../../images/darkHovered.png";
 import lightButton from "../../../../images/lightButton.png";
 import lightHovered from "../../../../images/lightHovered.png";
