@@ -7,6 +7,8 @@ import gsap from "gsap";
 import LoadingPage from "../pages/LoadingPage/LoadingPage";
 import { useToggleRoomStore } from "../stores/toggleRoomStore.js";
 
+import { useResponsiveStore } from "../stores/useResponsiveStore.js"; 
+
 const Experience = () => {
   const cameraRef = useRef();
   const pointerRef = useRef({ x: 0, y: 0 });
@@ -16,6 +18,21 @@ const Experience = () => {
   const [showGlowText2, setShowGlowText2] = useState(false);
   const [transitionText, setTransitionText] = useState("");
   const { isDarkRoom, setIsTransitioning } = useToggleRoomStore();
+
+  const { isMobile } = useResponsiveStore();
+
+  const zoomValues = {
+    default: isMobile ? 90 : 110,
+  }
+
+  useEffect(() => {
+    if (!cameraRef.current) return;
+
+    zoomValues.default = isMobile ? 90 : 110;
+
+    cameraRef.current.zoom = zoomValues.default;
+    cameraRef.current.updateProjectionMatrix();
+  }, [isMobile]);
 
   const cameraPositions = {
       dark: { position: new THREE.Vector3(31.1246, 26.695, 31.306) },
@@ -184,6 +201,7 @@ const Experience = () => {
 
         // camera move animation
         t1.to(cameraRef.current, {
+          zoom: zoomValues.default,
           duration: 0.8,
           ease: "power2.inOut",
           onUpdate: () => cameraRef.current.updateProjectionMatrix(),
@@ -196,6 +214,7 @@ const Experience = () => {
             ease: "power2.inOut",
           })
           .to(cameraRef.current, {
+            zoom: zoomValues.default,
             duration: 0.8,
             ease: "power2.inOut",
             onUpdate: () => cameraRef.current.updateProjectionMatrix(),
