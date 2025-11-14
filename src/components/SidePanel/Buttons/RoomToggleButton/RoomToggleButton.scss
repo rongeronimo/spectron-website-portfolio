@@ -4,62 +4,63 @@
   right: 7%;
   z-index: 100;
   cursor: pointer;
+}
 
-  width: 118px;
-  height: 47px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
-  border-radius: 6px;
-  outline: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+/* ----------------------------------------------------
+    LIGHT MODE 
+   ---------------------------------------------------- */
+svg.light {
+  transition: transform 0.25s ease;
 
-  // Remove any default border “bleed”
-  border: none;
-  background-clip: padding-box;
-
-  // Custom simulated border
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 2px;
-    border: 2px solid transparent;
-    pointer-events: none;
-    transition: border-color 0.3s ease;
+  svg rect,
+  svg line {
+    transition: fill 0.25s ease, stroke 0.25s ease;
   }
 
-  // Dark room: white border
-  &.dark::before {
-    border-color: white;
-  }
-
-  // Light room: black border
-  &.light::before {
-    border-color: black;
-  }
-
-  // Hover state → gold border + pop effect
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.10);
+
+    .rect1, 
+    .rect2 {
+      fill: #C9A857 !important;
+    }
   }
 
-  &:hover::before {
-    border-color: #c9a857;
+  .rect1 {
+    fill: black !important;
   }
-
-  &:active {
-    transform: scale(0.95);
+  .rect2 {
+    stroke: white !important;
   }
-
-  &:focus {
-    outline: none;
+  .rect3 {
+    stroke: white !important;
+  }
+  .line1,
+  .line2 {
+    stroke: white !important;
   }
 }
 
+/* ----------------------------------------------------
+    DARK MODE 
+   ---------------------------------------------------- */
+svg.dark {
+  transition: transform 0.25s ease;
 
+  svg rect,
+  svg line {
+    transition: fill 0.25s ease, stroke 0.25s ease;
+  }
+
+  &:hover {
+    transform: scale(1.10);
+
+    .rect1, 
+    .rect3 {
+      fill: #C9A857 !important;
+    }
+  }
+}
 .transition-overlay {
   position: fixed;
   top: 0;
