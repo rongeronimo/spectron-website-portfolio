@@ -542,8 +542,9 @@
 .side-panel .panel-header,
 .side-panel .panel-header--with-bar::after,
 .side-panel .panel-content-description,
+.side-panel .side-panel-full-image,
 .side-panel .side-panel-image,
-.side-panel .side-panel-form,
+.side-panel .side-panel-form-inner,
 .side-panel .resume-button-wrapper, 
 .side-panel .skills-icon-row-wrapper{   // <-- updated
   opacity: 0;
@@ -583,7 +584,7 @@
   animation-delay: 0.8s;
 }
 
-.side-panel .side-panel-form {
+.side-panel .side-panel-form-inner {
   animation: fadeInUp 1.7s ease-out forwards;
   animation-delay: 0.9s;
 }
