@@ -115,11 +115,9 @@ const SidePanel = ({ sections = [] }) => {
                   <img
                     src={section.imageSrc}
                     className="side-panel-image"
-                    alt={
-                      section.title ||
-                      section.header ||
-                      `panel-section-${index}`
-                    }
+                    alt={section.title || section.header || `panel-section-${index}`}
+                    decoding="async"
+                    loading="eager"
                   />
                 </div>
               )}
