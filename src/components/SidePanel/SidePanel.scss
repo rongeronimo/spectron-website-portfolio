@@ -543,6 +543,7 @@
 .side-panel .panel-header--with-bar::after,
 .side-panel .panel-content-description,
 .side-panel .side-panel-form-inner,
+.side-panel .side-panel-image,
 .side-panel .resume-button-wrapper, 
 .side-panel .skills-icon-row-wrapper{   // <-- updated
   opacity: 0;
@@ -550,8 +551,7 @@
 }
 
 /* only when panel is open, play the animations */
-.side-panel.open .side-panel-image,
-.side-panel.open .side-panel-full-image {
+.side-panel.open .side-panel-image {
   animation: fadeInUp 0.7s ease-out forwards;
   animation-delay: 0.3s;
 }
