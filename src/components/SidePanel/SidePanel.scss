@@ -542,8 +542,6 @@
 .side-panel .panel-header,
 .side-panel .panel-header--with-bar::after,
 .side-panel .panel-content-description,
-.side-panel .side-panel-full-image,
-.side-panel .side-panel-image,
 .side-panel .side-panel-form-inner,
 .side-panel .resume-button-wrapper, 
 .side-panel .skills-icon-row-wrapper{   // <-- updated
@@ -554,8 +552,8 @@
 /* only when panel is open, play the animations */
 .side-panel.open .side-panel-image,
 .side-panel.open .side-panel-full-image {
-  animation: fadeInUp 1s ease-out forwards;
-  animation-delay: 0.2s;
+  animation: fadeInUp 0.7s ease-out forwards;
+  animation-delay: 0.3s;
 }
 
 .side-panel.open .panel-header {
