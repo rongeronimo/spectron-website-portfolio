@@ -6,7 +6,7 @@ export default function Model(props) {
   const { nodes } = useGLTF('/models/Dark6thoffice.glb')
 
   // Load the video texture
-  const monitorVideo = useVideoTexture('/src/videos/darkroomvid.mp4', {
+  const monitorVideo = useVideoTexture('/public/videos/darkroomvid.mp4', {
     crossOrigin: 'anonymous',
     muted: true,
     loop: true,
