@@ -28,15 +28,15 @@ const Experience = () => {
   useEffect(() => {
     if (!cameraRef.current) return;
 
-    zoomValues.default = isMobile ? 90 : 110;
+    zoomValues.default = isMobile ? 80 : 110;
 
     cameraRef.current.zoom = zoomValues.default;
     cameraRef.current.updateProjectionMatrix();
   }, [isMobile]);
 
   const cameraPositions = {
-      dark: { position: new THREE.Vector3(31.1246, 26.695, 31.306) },
-      light: { position: new THREE.Vector3(42.9, 36.4, 13.5) },
+      dark: { position: new THREE.Vector3(31.1246, 26.365, 31.306).multiplyScalar(1.5) },
+      light: { position: new THREE.Vector3(42.9, 36.4, 13.5)  },
   };
 
   const switchTextDelay = 1500; // delay before showing overlay text after transition
@@ -229,8 +229,21 @@ const Experience = () => {
       pointerRef.current.x = (e.clientX / window.innerWidth) * 2 - 1;
       pointerRef.current.y = -(e.clientY / window.innerHeight) * 2 + 1;
     };
+
+    const onTouchMove = (e) => {
+      if(e.touches.length == 1){
+        pointerRef.current.x = (e.touches[0].clientX / window.innerWidth) * 2 - 1;
+        pointerRef.current.y = -(e.touches[0].clientY / window.innerHeight) * 2 + 1;
+      }
+    };
+
     window.addEventListener("pointermove", onPointerMove);
-    return () => window.removeEventListener("pointermove", onPointerMove);
+    window.addEventListener("touchmove", onTouchMove);
+
+    return () => {
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("touchmove", onTouchMove);
+    }
   }, []);
 
   // Loading complete animation sequence
@@ -274,7 +287,7 @@ const Experience = () => {
         <OrthographicCamera
           ref={cameraRef}
           makeDefault
-          position={[31.1246, 26.695, 31.306]}
+          position={[31.1246*1.5, 26.365*1.5, 31.306*1.5]}
           rotation={[-0.6811, 0.6517, 0.4569]}
           zoom={110}
         />

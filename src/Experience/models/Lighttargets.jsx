@@ -3,11 +3,13 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
+import { useNavigate } from "react-router";
 
-import { useUiStore } from "../../stores/uiStore";
+// import { useUiStore } from "../../stores/uiStore";
 
 export default function Model(props) {
-  const { openPanel } = useUiStore();
+  let navigate = useNavigate();
+  // const { openPanel } = useUiStore();
   const { nodes } = useGLTF("/models/lighttargets.glb");
 
   // --- Camera trigger ---
@@ -262,7 +264,9 @@ export default function Model(props) {
           hoverState.current.about = false;
           document.body.style.cursor = "auto";
         }}
-        onClick={() => openPanel("Workstation_Hitbox")}
+        onClick={() => {
+          navigate("/about");
+        }}
       />
       <mesh
         ref={aboutAnimRef}
@@ -300,7 +304,9 @@ export default function Model(props) {
           hoverState.current.projects = false;
           document.body.style.cursor = "auto";
         }}
-        onClick={() => openPanel("Projects_Hitbox")}
+        onClick={() => {
+          navigate("/project-experience");
+        }}
       />
       <mesh
         ref={projectsAnimRef}
@@ -338,7 +344,9 @@ export default function Model(props) {
           hoverState.current.skills = false;
           document.body.style.cursor = "auto";
         }}
-        onClick={() => openPanel("Skills_Hitbox")}
+        onClick={() => {
+          navigate("/skills");
+        }}
       />
       <mesh
         ref={skillsAnimRef}
@@ -376,7 +384,9 @@ export default function Model(props) {
           hoverState.current.contacts = false;
           document.body.style.cursor = "auto";
         }}
-        onClick={() => openPanel("Contacts_Hitbox")}
+        onClick={() => {
+          navigate("/contacts");
+        }}
       />
       <mesh
         ref={contactsAnimRef}

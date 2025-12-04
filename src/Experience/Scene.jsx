@@ -4,12 +4,15 @@ import Dark1stOffice from "./models/Dark1stoffice";
 import Dark2ndOffice from "./models/Dark2ndoffice";
 import Dark3rdOffice from "./models/Dark3rdoffice";
 import Dark4thOffice from "./models/Dark4thoffice";
+import Dark5thOffice from "./models/Dark5thoffice";
+import Dark6thOffice from "./models/Dark6thoffice";
 import Light1stHomeOffice from "./models/Light1stoffice";
 import Light2ndHomeOffice from "./models/Light2ndoffice";
 import Light3rdHomeOffice from "./models/Light3rdoffice";
 import Light4thHomeOffice from "./models/Light4thoffice";
 import Light5thHomeOffice from "./models/Light5thoffice";
 import Light6thHomeOffice from "./models/Light6thoffice";
+import Light7thHomeOffice from "./models/Light7thoffice";
 import DarkTargets from "./models/Darktargets";
 import LightTargets from "./models/Lighttargets";
 import Gridplanes from "./components/GridPlanes";
@@ -25,7 +28,7 @@ const Scene = ({ pointerRef}) => {
   const lightRoomGroupPosition = new THREE.Vector3(1.24, 0, -32.431);
 
   const groupRotationRef = useRef(0);
-  const { isDarkRoom, isTransitioning } = useToggleRoomStore();
+  const { isDarkRoom } = useToggleRoomStore();
   const [sceneReady, setSceneReady] = useState(false);
 
   // Toggle visibility instead of disposing
@@ -91,6 +94,8 @@ const Scene = ({ pointerRef}) => {
         <Dark2ndOffice />
         <Dark3rdOffice />
         <Dark4thOffice />
+        <Dark5thOffice />
+        <Dark6thOffice />
         <DarkTargets/>
       </group>
 
@@ -132,6 +137,13 @@ const Scene = ({ pointerRef}) => {
           ]}
         />
         <Light6thHomeOffice
+          position={[
+            -lightRoomGroupPosition.x,
+            -lightRoomGroupPosition.y,
+            -lightRoomGroupPosition.z,
+          ]}
+        />
+        <Light7thHomeOffice
           position={[
             -lightRoomGroupPosition.x,
             -lightRoomGroupPosition.y,

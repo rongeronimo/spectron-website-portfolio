@@ -1,9 +1,12 @@
 import './App.scss'
 import React, { useEffect } from "react";
-import RoomToggleButton from './components/SidePanel/Buttons/RoomToggleButton/RoomToggleButton'
+import RoomToggleButton from './components/Buttons/RoomToggleButton/RoomToggleButton'
 import SidePanel from './components/SidePanel/SidePanel';
 import Experience from './Experience/Experience';
 import LoadingPage from "./pages/LoadingPage/LoadingPage";
+import { Outlet } from 'react-router-dom';
+import Menu from './components/Menu/Menu';
+import Logo from './components/Logo/Logo';
 
 import { useResponsiveStore } from './stores/useResponsiveStore';
 
@@ -21,10 +24,12 @@ function App() {
 
   return ( 
     <>
+      <Menu />
+      <Logo />
       <LoadingPage />
       <RoomToggleButton />
-      <SidePanel />
       <Experience />
+      <Outlet />
     </>
   );
 }

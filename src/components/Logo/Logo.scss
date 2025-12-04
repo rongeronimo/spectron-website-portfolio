@@ -1,0 +1,20 @@
+.logo {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  z-index: 500;
+}
+
+.icon-logo.light,
+.icon-logo.light:hover {
+  transform: none !important;
+}
+
+/* Light Room — invert colors */
+.icon-logo.light circle {
+  fill: black !important;
+}
+
+.icon-logo.light path {
+  fill: black !important;
+}

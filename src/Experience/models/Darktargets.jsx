@@ -3,23 +3,19 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
-
-import { useUiStore } from "../../stores/uiStore";
+import { useNavigate } from "react-router";
 
 export default function Model(props) {
-  const { openPanel } = useUiStore();
+  let navigate = useNavigate();
   const { nodes } = useGLTF("/models/darktargets.glb");
 
-  // --- Delay visibility of pulsing circles ---
   const [showPulses, setShowPulses] = useState(false);
 
-  // Refs for pulse groups
   const aboutPulseRef = useRef();
   const skillsPulseRef = useRef();
   const projectsPulseRef = useRef();
   const contactsPulseRef = useRef();
 
-  // Fade-in each group one after another after 15s delay
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPulses(true);
@@ -61,14 +57,12 @@ export default function Model(props) {
     return () => clearTimeout(timer);
   }, []);
 
-  // Base materials
   const whiteMaterial = new THREE.MeshBasicMaterial({
     color: 0xffffff,
     transparent: false,
     opacity: 1,
   });
 
-  // Pulse material (glow rings)
   const createPulseMaterial = () =>
     new THREE.MeshBasicMaterial({
       color: 0xffffff,
@@ -79,13 +73,11 @@ export default function Model(props) {
       depthWrite: false,
     });
 
-  // Animation refs
   const aboutAnimRef = useRef();
   const skillsAnimRef = useRef();
   const projectsAnimRef = useRef();
   const contactsAnimRef = useRef();
 
-  // Hover tracking
   const hoverState = useRef({
     about: false,
     skills: false,
@@ -93,7 +85,6 @@ export default function Model(props) {
     contacts: false,
   });
 
-  // Pulse animation loop
   useFrame(({ clock }) => {
     if (!showPulses) return;
 
@@ -120,7 +111,6 @@ export default function Model(props) {
     });
   });
 
-  // Animation group mapping
   const animationPairs = {
     Workstation_Hitbox: { ref: aboutAnimRef, pulse: aboutPulseRef, key: "about" },
     Skills_Hitbox: { ref: skillsAnimRef, pulse: skillsPulseRef, key: "skills" },
@@ -128,12 +118,12 @@ export default function Model(props) {
     Contacts_Hitbox: { ref: contactsAnimRef, pulse: contactsPulseRef, key: "contacts" },
   };
 
-  // Hover scaling — fades pulse out on hover, fades back in when hover ends
+  // 🔥 FINAL UPDATED onHover — perfect full fade-out + smooth fade-in
   const onHover = (key, isHovering) => {
     const animObject = animationPairs[key];
     if (!animObject?.ref.current) return;
 
-    // Animate scaling of the target indicator
+    // Animate the white highlight scale
     gsap.to(animObject.ref.current.scale, {
       x: isHovering ? 1 : 0,
       y: isHovering ? 1 : 0,
@@ -143,23 +133,35 @@ export default function Model(props) {
     });
 
     const pulseGroup = animObject.pulse.current;
-    if (pulseGroup) {
-      // When hovering → fade out pulse
-      if (isHovering) {
-        gsap.to(pulseGroup.children.map((r) => r.material), {
+    if (!pulseGroup) return;
+
+    // Remove pulse wave animation influence
+    hoverState.current[key] = isHovering;
+
+    if (isHovering) {
+      // ✅ FULL FADE-OUT: remove pulse visuals instantly and fully
+      pulseGroup.children.forEach((ring) => {
+        gsap.killTweensOf(ring.material);
+        gsap.to(ring.material, {
           opacity: 0,
-          duration: 0.8,
+          duration: 1,   // fast fade-out, fully invisible
           ease: "power2.out",
         });
-      } else {
-        // When hover ends → fade back in
-        gsap.to(pulseGroup.children.map((r) => r.material), {
-          opacity: 0.15,
-          duration: 1.2,
-          ease: "power2.out",
-          delay: 0.3,
-        });
-      }
+      });
+    } else {
+      // Reset base pulse shape before reactivating pulse
+      pulseGroup.children.forEach((ring) => {
+        ring.scale.set(1, 1, 1);
+        ring.material.opacity = 0; // start fully invisible
+      });
+
+      // Slow fade-in so it's not too fast
+      gsap.to(pulseGroup.children.map((r) => r.material), {
+        opacity: 0.15,
+        duration: 3,
+        delay: 0.3,
+        ease: "power2.out",
+      });
     }
   };
 
@@ -182,7 +184,7 @@ export default function Model(props) {
           hoverState.current.about = false;
           onHover("Workstation_Hitbox", false);
         }}
-        onClick={() => openPanel("Workstation_Hitbox")}
+        onClick={() => navigate("/about")}
       />
       <mesh
         ref={aboutAnimRef}
@@ -221,7 +223,7 @@ export default function Model(props) {
           hoverState.current.skills = false;
           onHover("Skills_Hitbox", false);
         }}
-        onClick={() => openPanel("Skills_Hitbox")}
+        onClick={() => navigate("/skills")}
       />
       <mesh
         ref={skillsAnimRef}
@@ -260,7 +262,7 @@ export default function Model(props) {
           hoverState.current.projects = false;
           onHover("Projects_Hitbox", false);
         }}
-        onClick={() => openPanel("Projects_Hitbox")}
+        onClick={() => navigate("/project-experience")}
       />
       <mesh
         ref={projectsAnimRef}
@@ -299,7 +301,7 @@ export default function Model(props) {
           hoverState.current.contacts = false;
           onHover("Contacts_Hitbox", false);
         }}
-        onClick={() => openPanel("Contacts_Hitbox")}
+        onClick={() => navigate("/contacts")}
       />
       <mesh
         ref={contactsAnimRef}
