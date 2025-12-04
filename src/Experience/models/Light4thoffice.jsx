@@ -8,7 +8,7 @@ import { useGLTF } from '@react-three/drei'
 import { convertMaterialsToBasic } from '../utils/convertToBasic';
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('/models/Light4thoffice.glb')
+  const { nodes, materials } = useGLTF('public/models/Light4thoffice.glb')
 
   const newMaterials = convertMaterialsToBasic(materials);
 

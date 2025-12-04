@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 
 export default function Model(props) {
   let navigate = useNavigate();
-  const { nodes } = useGLTF("/models/darktargets.glb");
+  const { nodes } = useGLTF("public/models/darktargets.glb");
 
   const [showPulses, setShowPulses] = useState(false);
 

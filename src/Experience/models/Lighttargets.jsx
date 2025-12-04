@@ -10,7 +10,7 @@ import { useNavigate } from "react-router";
 export default function Model(props) {
   let navigate = useNavigate();
   // const { openPanel } = useUiStore();
-  const { nodes } = useGLTF("/models/lighttargets.glb");
+  const { nodes } = useGLTF("public/models/lighttargets.glb");
 
   // --- Camera trigger ---
   const targetPosition = new THREE.Vector3(42.9, 36.4, 13.5);
@@ -227,7 +227,7 @@ export default function Model(props) {
           r.material.opacity = 0; // start fully transparent
         });
 
-        // optional: gentle pop effect
+        // Optional: gentle pop effect
         gsap.fromTo(
           pulseGroup.scale,
           { x: 0.8, y: 0.8, z: 0.8 },

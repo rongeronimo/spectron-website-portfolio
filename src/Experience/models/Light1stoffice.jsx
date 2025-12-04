@@ -10,7 +10,7 @@ import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('/models/Light1stoffice.glb')
+  const { nodes, materials } = useGLTF('public/models/Light1stoffice.glb')
   const newMaterials = convertMaterialsToBasic(materials);
 
   // Fan reference
