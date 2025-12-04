@@ -118,6 +118,7 @@ const SidePanel = ({ sections = [] }) => {
                     alt={section.title || section.header || `panel-section-${index}`}
                     decoding="async"
                     loading={index === 0 ? "eager" : "lazy"}
+                    fetchpriority={index === 0 ? "high" : "auto"}
                   />
                 </div>
               )}
