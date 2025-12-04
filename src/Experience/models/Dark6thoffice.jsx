@@ -3,10 +3,10 @@ import { useGLTF, useVideoTexture } from '@react-three/drei'
 import * as THREE from 'three'
 
 export default function Model(props) {
-  const { nodes } = useGLTF('public/models/Dark6thoffice.glb')
+  const { nodes } = useGLTF('/models/Dark6thoffice.glb')
 
   // Load the video texture
-  const monitorVideo = useVideoTexture('../../../public/videos/darkroomvid.mp4', {
+  const monitorVideo = useVideoTexture('/videos/darkroomvid.mp4', {
     crossOrigin: 'anonymous',
     muted: true,
     loop: true,

@@ -10,7 +10,7 @@ import { useNavigate } from "react-router";
 export default function Model(props) {
   let navigate = useNavigate();
   // const { openPanel } = useUiStore();
-  const { nodes } = useGLTF("public/models/lighttargets.glb");
+  const { nodes } = useGLTF("/models/lighttargets.glb");
 
   // --- Camera trigger ---
   const targetPosition = new THREE.Vector3(42.9, 36.4, 13.5);

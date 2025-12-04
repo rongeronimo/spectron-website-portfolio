@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber'
 import { convertMaterialsToBasic } from '../utils/convertToBasic';
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('public/models/Dark5thoffice.glb')
+  const { nodes, materials } = useGLTF('/models/Dark5thoffice.glb')
   const newMaterials = convertMaterialsToBasic(materials);
 
   const seatRef = useRef();
