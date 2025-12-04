@@ -542,13 +542,18 @@
 .side-panel .panel-header,
 .side-panel .panel-header--with-bar::after,
 .side-panel .panel-content-description,
+.side-panel .side-panel-image,
 .side-panel .resume-button-wrapper, 
 .side-panel .skills-icon-row-wrapper{   // <-- updated
   opacity: 0;
   transform: translateY(14px);
 }
 
-/* 2) only when panel is open, play the animations */
+/* only when panel is open, play the animations */
+.side-panel.open .side-panel-image {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
 .side-panel.open .panel-header {
   animation: fadeInUp 1.2s ease-out forwards;
   animation-delay: 0.6s;
@@ -575,4 +580,5 @@
   animation: fadeInUp 1.4s ease-out forwards;
   animation-delay: 0.8s;
 }
+
 
