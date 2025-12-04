@@ -117,7 +117,7 @@ const SidePanel = ({ sections = [] }) => {
                     className="side-panel-image"
                     alt={section.title || section.header || `panel-section-${index}`}
                     decoding="async"
-                    loading="eager"
+                    loading={index === 0 ? "eager" : "lazy"}
                   />
                 </div>
               )}

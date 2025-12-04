@@ -70,9 +70,9 @@
   object-fit: contain; 
   display: block;
   opacity: 0;
+  transform: translateY(12px);
   visibility: hidden;
-  transform: translateY(14px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.6s ease, transform 0.6s ease;
   transition-delay: 0.3s;
 }
 
@@ -557,8 +557,8 @@
 /* only when panel is open, play the animations */
 .side-panel.open .side-panel-image {
   opacity: 1;
+  transform: translateY(0);
   visibility: visible;
-  transform: translateY(0);;
 }
 
 .side-panel.open .panel-header {
