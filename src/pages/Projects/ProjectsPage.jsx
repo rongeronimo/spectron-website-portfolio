@@ -9,13 +9,13 @@ const ProjectsPage = () => {
       <PagewithSidePanel
         sections={[
           {
-            imageSrc: "/src/images/Projects.png",
+            imageSrc: "/images/Projects.png",
             title: "Project Experience",
             content:
               "My projects are orem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           },
           {
-            imageSrc: "/src/images/Spectron.png",
+            imageSrc: "/images/Spectron.png",
             title: "Spectron",
             subheader: "React   ·   ThreeJS  ·   GSAP  ·   Zustand   ·   SCSS  ·   Vite",
             content: [
@@ -29,7 +29,7 @@ const ProjectsPage = () => {
             ],
           },
           {
-            imageSrc: "/src/images/EmoWarn.png",
+            imageSrc: "/images/EmoWarn.png",
             title: "EmoWarn",
             subheader: "HTML   ·   CSS  ·   Python   ·   Flask",
             content: ["EmoWarn is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."],
@@ -45,7 +45,7 @@ const ProjectsPage = () => {
             ],
           },
           {
-            imageSrc: "/src/images/FlowKanban.png",
+            imageSrc: "/images/FlowKanban.png",
             title: "Flow",
             subheader: "HTML   ·   Javascript   ·   CSS",
             content: ["Flow is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."],
@@ -61,7 +61,7 @@ const ProjectsPage = () => {
             ],
           },
           {
-            imageSrc: "/src/images/Cifake.png",
+            imageSrc: "/images/Cifake.png",
             title: "AI Image Detector",
             subheader: "Python   ·   Tensorflow   ·   OpenCV",
             content: ["This prototype is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."],
@@ -73,7 +73,7 @@ const ProjectsPage = () => {
             ],
           },
           {
-            imageSrc: "/src/images/RegexWizard.png",
+            imageSrc: "/images/RegexWizard.png",
             title: "RegEx Wizard",
             subheader: "HTML   ·   Javascript   ·   CSS   ·   Python",
             content: ["This prototype is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."],
@@ -85,7 +85,7 @@ const ProjectsPage = () => {
             ],
           },
           {
-            imageSrc: "/src/images/Emoculus.png",
+            imageSrc: "/images/Emoculus.png",
             title: "Emoculus",
             subheader: "Python   ·   DeepFace  ·   OpenCV   ·   Dlib",
             content: ["This prototype is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."],

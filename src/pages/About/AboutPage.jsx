@@ -9,7 +9,7 @@ const AboutPage = () => {
       <PagewithSidePanel
         sections={[
             {
-              imageSrc: "/src/images/About.png",
+              imageSrc: "/images/About.png",
               title: "Introduction",
               header: "Ron Cedric B. Geronimo",
               subheader: "Frontend Developer / 3D Web Developer",
