@@ -552,7 +552,8 @@
 }
 
 /* only when panel is open, play the animations */
-.side-panel.open .side-panel-image {
+.side-panel.open .side-panel-image,
+.side-panel.open .side-panel-full-image {
   animation: fadeInUp 1s ease-out forwards;
   animation-delay: 0.2s;
 }
