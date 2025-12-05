@@ -435,6 +435,25 @@
   }
 }
 
+@media (max-width: 768px) {
+    .close-button {
+      top: auto;
+      left: auto;
+      bottom: 4%;
+      right: 4%;
+      transform: none;          /* remove translate centering */
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;       /* better for thumb reach */
+      font-size: 1.6rem;
+      z-index: 1100;          /* above overlay */
+    }
+
+    .close-button:hover {
+      transform: scale(1.05);   /* keep subtle hover without shifting position */
+    }
+  }
+
 .overlay {
   position: fixed;
   top: 0;

@@ -19,20 +19,37 @@ const Experience = () => {
   const [transitionText, setTransitionText] = useState("");
   const { isDarkRoom, setIsTransitioning } = useToggleRoomStore();
 
-  const { isMobile } = useResponsiveStore();
+  const { isMobile, isLaptop } = useResponsiveStore();
 
   const zoomValues = {
-    default: isMobile ? 90 : 110,
-  }
+    default: isMobile
+      ? 80    // mobile
+      : isLaptop
+      ? 90    // laptop
+      : 110,   // fallback (desktop or tablet)
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      useResponsiveStore.getState().updateDimensions();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (!cameraRef.current) return;
 
-    zoomValues.default = isMobile ? 80 : 110;
+    const zoom = isMobile
+      ? 80
+      : isLaptop
+      ? 95
+      : 110;
 
-    cameraRef.current.zoom = zoomValues.default;
+    cameraRef.current.zoom = zoom;
     cameraRef.current.updateProjectionMatrix();
-  }, [isMobile]);
+  }, [isMobile, isLaptop]);
 
   const cameraPositions = {
       dark: { position: new THREE.Vector3(31.1246, 26.365, 31.306).multiplyScalar(1.5) },
@@ -289,7 +306,7 @@ const Experience = () => {
           makeDefault
           position={[31.1246*1.5, 26.365*1.5, 31.306*1.5]}
           rotation={[-0.6811, 0.6517, 0.4569]}
-          zoom={110}
+          zoom={zoomValues.default}
         />
         <Scene camera={cameraRef} pointerRef={pointerRef} />
       </Canvas>

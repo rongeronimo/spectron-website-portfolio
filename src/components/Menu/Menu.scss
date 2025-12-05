@@ -80,3 +80,51 @@
 .creation-date.light {
   color: black;
 }
+
+/* ===========================
+   RESPONSIVE FIX (≤ 768px)
+   =========================== */
+@media (max-width: 768px) {
+
+  .menu {
+    bottom: 10%;
+    left: 10%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .first-row,
+  .second-row {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* Slightly smaller buttons for mobile */
+  .nav-button {
+    transform: scale(0.92);
+  }
+
+  .nav-button svg,
+  .nav-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Disable hover scaling on touch devices */
+  .nav-button:hover {
+    transform: scale(0.92);
+  }
+
+  .creation-date {
+    font-size: 0.85rem;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 2%;
+    text-align: center;
+    max-width: 90%;
+    line-height: 1.4;
+  }
+}
