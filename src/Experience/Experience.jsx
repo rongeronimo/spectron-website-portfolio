@@ -19,14 +19,16 @@ const Experience = () => {
   const [transitionText, setTransitionText] = useState("");
   const { isDarkRoom, setIsTransitioning } = useToggleRoomStore();
 
-  const { isMobile, isLaptop } = useResponsiveStore();
+  const { isMobile, isTablet, isLaptop } = useResponsiveStore();
 
   const zoomValues = {
     default: isMobile
-      ? 80    // mobile
+      ? 66     // Phones
+      : isTablet
+      ? 85     // Tablets ✅ NEW proper layer
       : isLaptop
-      ? 90    // laptop
-      : 110,   // fallback (desktop or tablet)
+      ? 95     // Laptops
+      : 110,  // Desktop
   };
 
   useEffect(() => {
@@ -39,17 +41,19 @@ const Experience = () => {
   }, []);
 
   useEffect(() => {
-    if (!cameraRef.current) return;
+  if (!cameraRef.current) return;
 
-    const zoom = isMobile
-      ? 80
-      : isLaptop
-      ? 95
-      : 110;
+  const zoom = isMobile
+    ? 66     // Phones
+    : isTablet
+    ? 85     // Tablets 
+    : isLaptop
+    ? 95     // Laptops
+    : 110;   // Desktop
 
-    cameraRef.current.zoom = zoom;
-    cameraRef.current.updateProjectionMatrix();
-  }, [isMobile, isLaptop]);
+  cameraRef.current.zoom = zoom;
+  cameraRef.current.updateProjectionMatrix();
+}, [isMobile, isTablet, isLaptop]);
 
   const cameraPositions = {
       dark: { position: new THREE.Vector3(31.1246, 26.365, 31.306).multiplyScalar(1.5) },
@@ -311,10 +315,13 @@ const Experience = () => {
         <Scene camera={cameraRef} pointerRef={pointerRef} />
       </Canvas>
 
-      {showDarkMode && <div className="overlay-text">Dark.</div>}
-      {showLightMode && <div className="overlay-text2">Light.</div>}
-      {showGlowText && <div className="glow-text">Find what glows.</div>}
-      {showGlowText2 && <div className="glow-text2">Reflect with intent.</div>}
+      <div className="overlay-container">
+        {showDarkMode && <div className="overlay-text">Dark.</div>}
+        {showLightMode && <div className="overlay-text2">Light.</div>}
+        {showGlowText && <div className="glow-text">Find what glows.</div>}
+        {showGlowText2 && <div className="glow-text2">Reflect with intent.</div>}
+      </div>
+      
     </>
   );
 };

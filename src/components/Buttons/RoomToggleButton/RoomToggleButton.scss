@@ -8,7 +8,7 @@
 
 /* ----------------------------------------------------
     LIGHT MODE 
-   ---------------------------------------------------- */
+---------------------------------------------------- */
 svg.light {
   transition: transform 0.25s ease;
 
@@ -41,9 +41,44 @@ svg.light {
   }
 }
 
+/* Disable hover gold effect on tablet and phone */
+@media (max-width: 768px) {
+  svg.light:hover .rect1,
+  svg.light:hover .rect2 {
+    fill: inherit !important;
+  }
+  svg.light:hover {
+    transform: none !important;
+  }
+
+  /* Remove blue highlight on tap/click for mobile */
+.toggle-button,
+.toggle-button * {
+  -webkit-tap-highlight-color: transparent; /* Chrome, Safari */
+  outline: none; /* removes focus outline on click */
+}
+}
+
+@media (max-width: 425px) {
+  svg.light:hover .rect1,
+  svg.light:hover .rect2 {
+    fill: inherit !important;
+  }
+  svg.light:hover {
+    transform: none !important;
+  }
+
+  /* Remove blue highlight on tap/click for mobile */
+.toggle-button,
+.toggle-button * {
+  -webkit-tap-highlight-color: transparent; /* Chrome, Safari */
+  outline: none; /* removes focus outline on click */
+}
+}
+
 /* ----------------------------------------------------
     DARK MODE 
-   ---------------------------------------------------- */
+---------------------------------------------------- */
 svg.dark {
   transition: transform 0.25s ease;
 
@@ -61,6 +96,43 @@ svg.dark {
     }
   }
 }
+
+/* Disable hover gold effect on tablet and phone */
+@media (max-width: 768px) {
+  svg.dark:hover .rect1,
+  svg.dark:hover .rect3 {
+    fill: inherit !important;
+  }
+  svg.dark:hover {
+    transform: none !important;
+  }
+
+  /* Remove blue highlight on tap/click for mobile */
+  .toggle-button,
+  .toggle-button * {
+    -webkit-tap-highlight-color: transparent; /* Chrome, Safari */
+    outline: none; /* removes focus outline on click */
+  }
+}
+
+@media (max-width: 425px) {
+  svg.dark:hover .rect1,
+  svg.dark:hover .rect3 {
+    fill: inherit !important;
+  }
+  svg.dark:hover {
+    transform: none !important;
+  }
+
+  /* Remove blue highlight on tap/click for mobile */
+  .toggle-button,
+  .toggle-button * {
+    -webkit-tap-highlight-color: transparent; /* Chrome, Safari */
+    outline: none; /* removes focus outline on click */
+  }
+}
+
+
 .transition-overlay {
   position: fixed;
   top: 0;

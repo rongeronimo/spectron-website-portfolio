@@ -81,18 +81,19 @@
   color: black;
 }
 
-/* ===========================
-   RESPONSIVE FIX (≤ 768px)
-   =========================== */
-@media (max-width: 768px) {
+/* RESPONSIVENESS */
+
+/* Mobile */
+@media (max-width: 425px) {
 
   .menu {
-    bottom: 10%;
-    left: 10%;
+    bottom: 5%;
+    left: 15%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     gap: 10px;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .first-row,
@@ -119,12 +120,19 @@
   }
 
   .creation-date {
+    position: fixed;
     font-size: 0.85rem;
-    right: 50%;
+    right: 20%;
     transform: translateX(50%);
-    bottom: 2%;
+    bottom: 3%;
     text-align: center;
     max-width: 90%;
     line-height: 1.4;
   }
 }
+
+@media (max-width: 768px) {
+  .menu {   
+    -webkit-tap-highlight-color: transparent;
+  }
+} 

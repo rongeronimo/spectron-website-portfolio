@@ -58,10 +58,6 @@
   height: auto;
   overflow: hidden;
 
-  @media (max-width: 768px) {
-    margin-left: 0px;
-    max-width: 100%;
-  }
 }
 
 .side-panel-image {
@@ -435,25 +431,6 @@
   }
 }
 
-@media (max-width: 768px) {
-    .close-button {
-      top: auto;
-      left: auto;
-      bottom: 4%;
-      right: 4%;
-      transform: none;          /* remove translate centering */
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;       /* better for thumb reach */
-      font-size: 1.6rem;
-      z-index: 1100;          /* above overlay */
-    }
-
-    .close-button:hover {
-      transform: scale(1.05);   /* keep subtle hover without shifting position */
-    }
-  }
-
 .overlay {
   position: fixed;
   top: 0;
@@ -612,4 +589,233 @@
   animation-delay: 0.9s;
 }
 
+/* RESPONSIVENESS */
+
+/* Mobile */
+@media (max-width: 425px) {
+
+  .side-panel-content {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden; /* CRITICAL */
+  }
+
+  .side-panel-full-image {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .side-panel-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 42vh;
+    display: block;
+  }
+
+  .side-panel-text {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-right: 0%;
+  }
+
+  .close-button {
+    top: auto;
+    left: auto;
+    bottom: 4%;
+    right: 4%;
+    transform: none;          /* remove translate centering */
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;       /* better for thumb reach */
+    font-size: 1.6rem;
+    z-index: 1100;          /* above overlay */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .close-button:hover {
+    transform: scale(1.05);   /* keep subtle hover without shifting position */
+  }
+
+  .skills-icon-row {
+    gap: 1.4rem;     /* tighter spacing */
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .skills-icon-row-wrapper{
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .skill-icon-svg svg {
+    width: 50px;     /* smaller icons */
+    height: 50px;
+  }
+
+  .skill-label {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  .project-button,
+  .resume-button {
+    padding: 0.45rem 1.1rem;
+    font-size: 0.55rem;
+    border-radius: 999px;
+  }
+
+  .section-buttons {
+    gap: 0.5rem;   /* tighter stacking on mobile */
+  }
+
+  .side-panel-form button.project-button {
+    padding: 0.75rem 2.1rem;
+    font-size: 0.85rem;
+  }
+
+  .panel-header,
+  .section-header {
+    font-size: 1.85rem;
+  }
+
+  .skills-icon-header {
+    font-size: 1.65rem;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .panel-content-description {
+    font-size: 0.88rem;     /* better readability without being bulky */
+    line-height: 1.65;     /* tighter vertical rhythm */
+    max-width: 100%;
+    margin-bottom: 1.2rem;
+  }
+
+  .side-panel-section--profile .panel-content-description:nth-of-type(1),
+  .side-panel-section--profile .panel-content-description:nth-of-type(2) {
+    margin-bottom: 0.4rem;
+    line-height: 1.45;
+  }
+
+  .side-panel-section--profile .panel-content-description:nth-of-type(3) {
+    margin-top: 1.8rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+  .side-panel-content {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden; /* ✅ CRITICAL */
+  }
+
+  .side-panel-full-image {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .side-panel-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 42vh;
+    display: block;
+  }
+
+  .side-panel-text {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-right: 0%;
+  }
+
+  .close-button {
+    top: auto;
+    left: auto;
+    bottom: 4%;
+    right: 4%;
+    transform: none;          /* remove translate centering */
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;       /* better for thumb reach */
+    font-size: 1.6rem;
+    z-index: 1100;          /* above overlay */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .close-button:hover {
+    transform: scale(1.05);   /* keep subtle hover without shifting position */
+  }
+
+  .skills-icon-row {
+    gap: 2rem;     /* tighter spacing */
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .skills-icon-row-wrapper{
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .skill-icon-svg svg {
+    width: 60px;     /* smaller icons */
+    height: 60px;
+  }
+
+  .skill-label {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+  }
+
+  .project-button,
+  .resume-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    border-radius: 999px;
+  }
+
+  .section-buttons {
+    gap: 0.5rem;   /* tighter stacking on mobile */
+  }
+
+  .side-panel-form button.project-button {
+    padding: 0.75rem 2.1rem;
+    font-size: 0.85rem;
+  }
+
+  .panel-header,
+  .section-header {
+    font-size: 2.85rem;
+  }
+
+  .skills-icon-header {
+    font-size: 2rem;
+  }
+
+  .panel-content-description {
+    font-size: 1rem;     /* better readability without being bulky */
+    line-height: 1.65;     /* tighter vertical rhythm */
+    max-width: 100%;
+    margin-bottom: 1.2rem;
+  }
+
+  .side-panel-section--profile .panel-content-description:nth-of-type(1),
+  .side-panel-section--profile .panel-content-description:nth-of-type(2) {
+    margin-bottom: 0.4rem;
+    line-height: 1.45;
+  }
+
+  .side-panel-section--profile .panel-content-description:nth-of-type(3) {
+    margin-top: 1.8rem;
+  }
+}
 

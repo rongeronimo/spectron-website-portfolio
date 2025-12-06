@@ -35,6 +35,8 @@ const SidePanel = ({ sections = [] }) => {
     }
   }, [isMobile]);
 
+  
+
   // Open/close animation
   useEffect(() => {
     if (!panelRef.current) return;

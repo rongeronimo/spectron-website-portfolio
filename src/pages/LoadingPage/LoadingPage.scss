@@ -142,3 +142,64 @@
   animation: fadeInOut 4.5s ease-in-out forwards;
   pointer-events: none;
 }
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* full screen height */
+  pointer-events: none;
+}
+
+@media (max-width: 425px) {
+  .overlay-text,
+  .overlay-text2,
+  .glow-text,
+  .glow-text2 {
+    font-size: 22px;
+    position: absolute;
+    bottom: 17%;
+    right: 17%;      /* <-- unified alignment */
+
+    top: auto;        /* reset old values */
+    left: auto;
+    transform: none;  /* reset translateY */
+
+    text-align: left;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .overlay-text,
+  .overlay-text2,
+  .glow-text,
+  .glow-text2 {
+    font-size: 26px;
+    position: absolute;
+    bottom: 17%;
+    right: 17%;      /* <-- unified alignment */
+
+    top: auto;        /* reset old values */
+    left: auto;
+    transform: none;  /* reset translateY */
+
+    text-align: left;
+  }
+
+  .overlay-text2,
+  .glow-text2 {
+    font-size: 26px;
+    position: absolute;
+    bottom: 14%;
+    right: 14%;      /* <-- unified alignment */
+
+    top: auto;        /* reset old values */
+    left: auto;
+    transform: none;  /* reset translateY */
+
+    text-align: left;
+  }
+
+}
