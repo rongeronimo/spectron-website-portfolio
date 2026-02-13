@@ -1,7 +1,6 @@
 import './App.scss'
 import React, { useEffect } from "react";
 import RoomToggleButton from './components/Buttons/RoomToggleButton/RoomToggleButton'
-import SidePanel from './components/SidePanel/SidePanel';
 import Experience from './Experience/Experience';
 import LoadingPage from "./pages/LoadingPage/LoadingPage";
 import { Outlet } from 'react-router-dom';

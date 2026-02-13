@@ -58,9 +58,6 @@ const Menu = () => {
           </NavLink>
           </div>
         </nav>
-        <div className={`creation-date ${!isDarkRoom ? "light" : ""}`}>
-          <p>Last updated: 11/18/25</p>
-        </div>
     </>
   );
 };
