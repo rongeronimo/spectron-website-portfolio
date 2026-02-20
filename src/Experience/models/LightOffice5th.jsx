@@ -11,7 +11,7 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('/models/LightOffice5th.glb')
 
   const newMaterials = convertMaterialsToBasic(materials);
-  
+
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.CatCushion_Baked.geometry} material={newMaterials['CatCushion_Baked.001']} position={[-1.07, 0.16, -32.191]} />
