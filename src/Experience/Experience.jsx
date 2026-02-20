@@ -72,7 +72,7 @@ const Experience = () => {
       : cameraPositions.light.position;
 
     const overlay = document.querySelector(".transition-overlay");
-    if (overlay) overlay.style.backgroundColor = isDarkRoom ? "black" : "white";
+    if (overlay) overlay.style.backgroundColor = isDarkRoom ? "black" : "#c7c7c7ff";
 
     setTransitionText(isDarkRoom ? "Lead with calm." : "Grow brighter.");
 
