@@ -206,7 +206,7 @@ export default function Model(props) {
         ))}
       </group>
 
-      {/* --- Skills --- */}
+      {/* --- Projects --- */} {/* This is originally Skills which is now swapped with projects */} 
       <mesh
         geometry={nodes.Skills_Hitbox.geometry}
         material={nodes.Skills_Hitbox.material}
@@ -223,7 +223,7 @@ export default function Model(props) {
           hoverState.current.skills = false;
           onHover("Skills_Hitbox", false);
         }}
-        onClick={() => navigate("/skills")}
+        onClick={() => navigate("/project-experience")}
       />
       <mesh
         ref={skillsAnimRef}
@@ -245,7 +245,7 @@ export default function Model(props) {
         ))}
       </group>
 
-      {/* --- Projects --- */}
+      {/* --- Skills --- */} {/* This is originally projects which is now swapped with skills */} 
       <mesh
         geometry={nodes.Projects_Hitbox.geometry}
         material={nodes.Projects_Hitbox.material}
@@ -262,7 +262,7 @@ export default function Model(props) {
           hoverState.current.projects = false;
           onHover("Projects_Hitbox", false);
         }}
-        onClick={() => navigate("/project-experience")}
+        onClick={() => navigate("/skills")}
       />
       <mesh
         ref={projectsAnimRef}
