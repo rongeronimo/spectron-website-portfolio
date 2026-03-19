@@ -58,6 +58,9 @@ const Menu = () => {
           </NavLink>
           </div>
         </nav>
+        <div className={`version-num ${!isDarkRoom ? "light" : ""}`}>
+          <p>v1.0.0</p> 
+        </div>
     </>
   );
 };
