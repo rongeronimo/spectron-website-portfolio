@@ -4,7 +4,7 @@
   position: fixed;
   bottom: 5%;
   left: 5%;
-  z-index: 100;
+  z-index: 999;
   cursor: pointer;
 }
 
@@ -34,6 +34,19 @@
   fill: black !important;
 }
 
+.version-num { 
+  position: fixed;
+  bottom: 5%; 
+  right: 7%; 
+  color: #ffffff;
+  font-size: 1rem; 
+  font-family: "Manrope", sans-serif;
+  line-height: 1.75; 
+  max-width: 95%; 
+  margin-bottom: 1.5rem; 
+  z-index: 500; 
+}
+
 /* Light Room — invert colors */
 .nav-button.light rect {
   fill: black !important;
@@ -41,6 +54,11 @@
 
 .nav-button.light path {
   fill: white !important;
+}
+
+/* Light room version number */
+.version-num.light{
+  color: black;
 }
 
 /* ===========================
@@ -62,6 +80,8 @@
   justify-content: column;
   gap: 12px;
 }
+
+
 
 
 /* RESPONSIVENESS */
@@ -102,10 +122,25 @@
     transform: scale(0.92);
   }
 
+  .version-num {
+    font-size: 0.75rem;
+    bottom: 2%;
+    right: 50%;
+    transform: translateX(50%);
+    text-align: center;
+  }
+
 }
 
+  
 @media (max-width: 768px) {
   .menu {   
     -webkit-tap-highlight-color: transparent;
+  }
+
+  .version-num {
+    font-size: 0.9rem;
+    bottom: 4%;
+    right: 4%;
   }
 } 
