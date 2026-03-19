@@ -6,6 +6,7 @@ import { useToggleRoomStore } from "../../stores/toggleRoomStore";
 import gsap from "gsap";
 import { useNavigate } from "react-router";
 import { useResponsiveStore } from "../../stores/useResponsiveStore";
+import "../../pages/Contacts/ContactsPage.jsx";
 
 const SidePanel = ({ sections = [] }) => {
   const { isPanelOpen, closePanel } = useUiStore();
@@ -34,8 +35,6 @@ const SidePanel = ({ sections = [] }) => {
       }
     }
   }, [isMobile]);
-
-  
 
   // Open/close animation
   useEffect(() => {
@@ -77,7 +76,7 @@ const SidePanel = ({ sections = [] }) => {
       } else {
         gsap.to(panelRef.current, {
           y: "100%",
-          duration: 1,
+          duration: 0.5,
           onComplete: () => {
             navigate("/");
             console.log("Panel closed");
@@ -300,6 +299,7 @@ const SidePanel = ({ sections = [] }) => {
                     )}
 
                     <form
+                      ref={section.contactForm.formRef}
                       className="side-panel-form"
                       onSubmit={section.contactForm.onSubmit}
                     >
@@ -307,7 +307,7 @@ const SidePanel = ({ sections = [] }) => {
                       <div className="side-panel-form-field">
                         <input
                           id="contact-name"
-                          name="name"
+                          name="user-name"
                           type="text"
                           required = "required"
                         />
@@ -318,7 +318,7 @@ const SidePanel = ({ sections = [] }) => {
                       <div className="side-panel-form-field">
                         <input
                           id="contact-email"
-                          name="email"
+                          name="user-email"
                           type="email"
                           required = "required"
                         />
@@ -329,7 +329,7 @@ const SidePanel = ({ sections = [] }) => {
                       <div className="side-panel-form-field">
                         <textarea
                           id="contact-message"
-                          name="message"
+                          name="user-message"
                           rows="2"
                           required = "required"
                         />

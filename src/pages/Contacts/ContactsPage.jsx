@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import PagewithSidePanel from "../PagewithSidePanel.jsx";
 import { useToggleRoomStore } from "../../stores/toggleRoomStore.js";
+import emailjs from "@emailjs/browser";
 
 const ContactsPage = () => {
 
@@ -8,20 +9,22 @@ const ContactsPage = () => {
     
   const buttonClassNames = `nav-button${!isDarkRoom ? " light" : ""}`;
 
+  const form = useRef();
+
   const handleContactSubmit = (e) => {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const message = formData.get("message");
-
-    // TODO: hook this into your backend / email service
-    console.log({ name, email, message });
-
-    // Simple feedback for now
-    alert("Thank you! Your message has been sent.");
-    e.target.reset();
+    // EmailJS configuration (service ID, template ID, formValues, public key)
+    emailjs.sendForm("service_j2d7cuz", "template_zb3i5jr", form.current, "-pdmEBH6L2s_P5Hta").then(
+      ()=> {
+        alert("Message sent successfully!");
+        form.current.reset();
+      },
+      (error) => {
+        console.error("Failed to send message:", error.text);
+        alert("Failed to send message. Please try again later.");
+      }
+    )
   };
 
   return (
@@ -61,7 +64,7 @@ const ContactsPage = () => {
                   </defs>
                   </svg>
                 ),
-                href: "https://mail.google.com/mail/?view=cm&fs=1&to=cedricrongeronimo08@gmail.com",
+                href: "https://mail.google.com/mail/?view=cm&fs=1&to=spectron3dportfolio@gmail.com",
               },
               {
                 label: "LinkedIn",
@@ -86,9 +89,9 @@ const ContactsPage = () => {
             ],
             contactForm: {
               title: "Get in Touch",
-              description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
               onSubmit: handleContactSubmit,
+              formRef: form
             },
 
           },
