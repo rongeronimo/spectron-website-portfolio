@@ -24,6 +24,9 @@ svg.light {
     .rect2 {
       fill: #C9A857 !important;
     }
+    .moon {
+      opacity: 0 !important;
+    }
   }
 
   .rect1 {
@@ -38,6 +41,21 @@ svg.light {
   .line1,
   .line2 {
     stroke: white !important;
+  }
+
+  
+  .sun-rays {
+    stroke: black !important;
+  }
+
+  .sun {
+    fill: black !important;
+    stroke: black !important;
+  }
+
+
+  .moon {
+    fill: black !important;
   }
 }
 
@@ -93,6 +111,10 @@ svg.dark {
     .rect1, 
     .rect3 {
       fill: #C9A857 !important;
+    }
+
+    .sun {
+      opacity: 0 !important;
     }
   }
 }
