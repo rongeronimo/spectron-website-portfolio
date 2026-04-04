@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import RoomToggleButton from './components/Buttons/RoomToggleButton/RoomToggleButton'
 import Experience from './Experience/Experience';
 import LoadingPage from "./pages/LoadingPage/LoadingPage";
-import { Outlet } from 'react-router-dom';
+import Router from './routes/Router';
 import Menu from './components/Menu/Menu';
 import Logo from './components/Logo/Logo';
 
@@ -28,7 +28,7 @@ function App() {
       <LoadingPage />
       <RoomToggleButton />
       <Experience />
-      <Outlet />
+      <Router />
     </>
   );
 }
