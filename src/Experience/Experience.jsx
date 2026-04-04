@@ -303,7 +303,7 @@ const Experience = () => {
 
       <Canvas
         className="r3f-canvas"
-        style={{ opacity: 0, transition: "opacity 1s ease" }}
+        style={{ position: "fixed", zIndex:0, top: 0, left: 0, opacity: 1, pointerEvents: "auto", transition: "opacity 1s ease" }}
       >
         <OrthographicCamera
           ref={cameraRef}
