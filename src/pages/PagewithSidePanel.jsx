@@ -12,7 +12,6 @@ const PagewithSidePanel = ({ sections }) => {
 
   return (
     <>
-      <div className="hello"></div>
       <SidePanel sections={sections} />
     </>
   );
