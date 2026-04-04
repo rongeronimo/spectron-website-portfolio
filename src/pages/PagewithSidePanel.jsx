@@ -18,4 +18,3 @@ const PagewithSidePanel = ({ sections }) => {
 };
 
 export default PagewithSidePanel;
-
