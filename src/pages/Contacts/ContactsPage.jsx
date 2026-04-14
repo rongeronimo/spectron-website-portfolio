@@ -35,7 +35,7 @@ const ContactsPage = () => {
           {
             imageSrc: "/images/ContactMe.png",
             title: "Contact Me",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            content: "Interested in my work or considering me for an opportunity? You can connect through the contact icons or send a direct message using the form below. I am open to project inquiries and career opportunities.",
             icons: [
               {
                 label: "Cavite • PH",
@@ -64,7 +64,7 @@ const ContactsPage = () => {
                   </defs>
                   </svg>
                 ),
-                href: "https://mail.google.com/mail/?view=cm&fs=1&to=spectron3dportfolio@gmail.com",
+                href: "https://mail.google.com/mail/?view=cm&fs=1&to=cedrongeronimo@gmail.com",
               },
               {
                 label: "LinkedIn",
@@ -88,8 +88,8 @@ const ContactsPage = () => {
               },
             ],
             contactForm: {
-              title: "Get in Touch",
-              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+              title: "Keep in Touch",
+              description: "Send a message using the form below, and I will respond as soon as possible. Inquiries and feedback are always welcome.",
               onSubmit: handleContactSubmit,
               formRef: form
             },

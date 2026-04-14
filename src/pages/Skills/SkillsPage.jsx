@@ -18,11 +18,11 @@ const SkillsPage = () => {
             imageSrc: "/images/TechnicalSkills.png",
             title: "Technical Skills",
             content:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+              "This represents the technologies I use to bring ideas to reality. Each tool included here reflects not only familiarity but also practical expertise earned through real-world project development. These skills range from creating dynamic front-end experiences to constructing structured back-end systems. Moreover, this serves as the foundation for how I approach problem-solving, performance, and user experience in any project I work on.",
           },
           {
             iconHeader: "Core Web",
-            iconDescription: "This includes Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            iconDescription: "These tools allow me to build clean, responsive, and accessible web experiences. HTML defines the content and layout, while CSS and SASS provide powerful styling capabilities.  JavaScript then transforms static layout into an interactive and dynamic behavior for any website I develop.",
             icons: [
               {
                 label: "HTML",
@@ -70,7 +70,7 @@ const SkillsPage = () => {
           },
           {
             iconHeader: "Frontend Technologies",
-            iconDescription: "This includes Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            iconDescription: "These technologies power the interactivity and immersive experiences within my projects, particularly in the development of this website portfolio. For the core framework, I build modular and maintainable interfaces using React, while Three.js enables me to create engaging 3D graphics directly in the browser. GSAP further enhances these experiences with smooth and precise animations, complemented by Vite for a fast and efficient development workflow. To manage state effectively, I use Zustand for a lightweight and scalable approach. Together, these tools allow me to craft dynamic, visually rich, and performance-driven user interfaces.",
             icons: [
               {
                 label: "React",
@@ -412,7 +412,7 @@ const SkillsPage = () => {
           },
           {
             iconHeader: "Backend & API",
-            iconDescription: "This includes Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            iconDescription: "This focuses on creating reliable systems that support dynamic and data-driven applications. PHP and Laravel are my primary tools because they allow me to build structured and maintainable server-side logic. Furthermore, in terms of working with APIs, I use JSON to manage data exchange and tools like Insomnia to test and refine endpoints. This ensures that any website I work on will have smooth and consistent communication between the front-end and server.",
             icons: [
               {
                 label: "PHP",
@@ -464,7 +464,7 @@ const SkillsPage = () => {
           },
           {
             iconHeader: "Scientific Computing",
-            iconDescription: "This includes Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            iconDescription: "Scientific computing is the foundation of how I analyze and interpret complex data. To manage and analyze datasets in Python, I utilize NumPy and Pandas, Scipy for complex computations, and Matplotlib for clear and effective visualization of findings. These tools enable me to translate raw data into actionable outcomes, facilitating choices based on data and projects that require precision and accuracy.",
             icons: [
               {
                 label: "Python",
@@ -559,7 +559,7 @@ const SkillsPage = () => {
           },
           {
             iconHeader: "3D & Creative Tools",
-            iconDescription: "This includes Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            iconDescription: "My web projects rely heavily on creating visually compelling and immersive content. I utilize Blender to create 3D models and elements for interactive environments like this website portfolio. Similarly, I use Figma to construct wireframes and layouts that define the structure and user flow of my websites. Together, these technologies enable me to blend creative design with practical implementation, which guarantees that each project is both visually appealing and user-friendly.",
             icons: [
               {
                 label: "Blender",
@@ -586,7 +586,7 @@ const SkillsPage = () => {
           },
           {
             iconHeader: "Developmental Tools",
-            iconDescription: "This includes Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            iconDescription: "Efficient development and collaboration are key to delivering high-quality projects. That explains why I always find Git and GitHub reliable when maintaining version control, tracking changes, and coordinating work across the phases of the projects I work on, whereas VS Code is my primary environment for writing and testing code. These tools enable me to maintain clean, structured, and consistent workflows, ensuring that each project runs well from start to finish.",
             icons: [
               {
                 label: "Git",

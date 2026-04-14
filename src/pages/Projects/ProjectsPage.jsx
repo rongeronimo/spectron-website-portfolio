@@ -12,14 +12,14 @@ const ProjectsPage = () => {
             imageSrc: "/images/Projects.png",
             title: "Project Experience",
             content:
-              "My projects are orem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "This displays a variety of projects that illustrate my abilities in development, design, and problem solving. Each project contains a brief summary, important features, and technology used. You can learn more about them by clicking the GitHub button for the repository/source code or by visiting the project's live website, if one is available. These projects demonstrate my approach to developing interactive, efficient, and user-friendly applications.",
           },
           {
             imageSrc: "/images/Spectron.png",
             title: "Spectron",
             subheader: "React   ·   ThreeJS  ·   GSAP  ·   Zustand   ·   SCSS  ·   Vite",
             content: [
-              "Spectron is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "Spectron Portfolio is an interactive 3D web portfolio built using React, Three.js, and GSAP, designed to showcase background, skills, experience, and contact details through an immersive, game-like experience. Users can switch between two different scenes, allowing them to explore the environment from multiple perspectives. Smooth transitions and simple interactions make navigation feel natural and easy to follow. Content is presented through clean and user-friendly panels for better readability and organization. The 3D assets were created and optimized in Blender, ensuring a good balance between visual quality and performance.",
             ],
             buttons: [
               {
@@ -32,12 +32,8 @@ const ProjectsPage = () => {
             imageSrc: "/images/EmoWarn.png",
             title: "EmoWarn",
             subheader: "HTML   ·   CSS  ·   Python   ·   Flask",
-            content: ["EmoWarn is a light web application that uses a news article's headline and main content to analyze the probability of it being an article composed for the purpose of spreading misinformation, colloquially known as fake news. It also analyzes the probability of which emotion the reader is likely to feel after reading the article to attempt to warn the user about any emotional biases in the article. The emotions are based on Paul Ekman's basic emotions of Joy, Anger, Fear, Sadness, and Surprise."],
+            content: ["EmoWarn is the first light web application that uses a news article's headline and main content to analyze the probability of it being an article composed for the purpose of spreading misinformation, colloquially known as fake news. It also analyzes the probability of which emotion the reader is likely to feel after reading the article to attempt to warn the user about any emotional biases in the article. The emotions are based on Paul Ekman's basic emotions of Joy, Anger, Fear, Sadness, and Surprise."],
             buttons: [
-              {
-                label: "Website",
-                href: "https://emowarn.pythonanywhere.com/",
-              },
               {
                 label: "GitHub",
                 href: "https://github.com/rongeronimo/EmoWarnV2",
