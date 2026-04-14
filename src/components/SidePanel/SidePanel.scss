@@ -3,8 +3,8 @@
 .side-panel {
   position: fixed;
   top: 0;
-  right: 0;
-  height: 100%;        // make it explicit it's viewport height
+  right: 0; 
+  height: 100%;      
   width: 60%;
   background-color: #0f0f0f;
   transform: translateX(100%);
@@ -17,18 +17,6 @@
     overflow: visible;
   }
 
-  @media (max-width: 768px) {
-    position: fixed;
-    top: auto;
-    bottom: 0;
-    right: 0;
-    height: 100vh;
-    width: 100%;
-    background-color: #0f0f0f;
-    transform: translateY(100%);
-    z-index: 1000;
-    overflow: hidden;
-  }
 }
 
 .side-panel-content {
@@ -37,6 +25,7 @@
   height: 100%;
   padding-left: 5rem;
   overflow-y: auto;
+  background-color: #0f0f0f;
 
   /* hide scrollbar, keep scroll */
   scrollbar-width: none;        /* Firefox */
@@ -62,8 +51,9 @@
 
 .side-panel-image {
   width: 100%;
-  height: 100%;
-  object-fit: contain; 
+  height: 570px;
+  object-fit: cover;       
+  object-position: top;    
   display: block;
   opacity: 0;
   transform: translateY(12px);
@@ -74,8 +64,9 @@
 
 .side-panel-text {
   flex: 1;
-  padding: 2.5rem 2.5rem 2.5rem 0; /* remove double left padding */
+  padding: 2.5rem 1.8rem 2.5rem 0; /* remove double left padding */
   overflow-y: auto;
+  border-left: none; /* remove default border */
 }
 
 /* Keep your header and description styles */
@@ -105,6 +96,8 @@
   font-size: 1rem;
   line-height: 1.85;
   max-width: 95%;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .section-heading {
@@ -400,7 +393,7 @@
 
 /* a bit more space before the rest of the content */
 .side-panel-section--profile .panel-content-description:nth-of-type(3) {         
-  margin-top: 3rem;      /* extra space above the paragraph */
+  margin-top: 4rem;      /* extra space above the paragraph */
 }
 
 .close-button {
@@ -453,6 +446,10 @@
 /* === LIGHT MODE VARIATION === */
 .side-panel.light-mode {
   background-color: #ffffff; // white background
+
+  .side-panel-content {
+    background-color: #ffffff; // white background
+  }
 
   .panel-header, 
   .panel-content-description,
@@ -555,38 +552,40 @@
   opacity: 1;
   transform: translateY(0);
   visibility: visible;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.6s;
 }
 
 .side-panel.open .panel-header {
   animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 0.6s;
+  animation-delay: 0.7s;
 }
 
 .side-panel.open .panel-header--with-bar::after {
   animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 0.6s;
+  animation-delay: 0.7s;
 }
 
 .side-panel.open .section-header,
 .side-panel.open .resume-button-wrapper,
 .side-panel.open .section-subheader {
   animation: fadeInUp 1.4s ease-out forwards;
-  animation-delay: 0.7s;
+  animation-delay: 0.8s;
 }
 
 .side-panel.open .panel-content-description {
   animation: fadeInUp 1.6s ease-out forwards;
-  animation-delay: 0.8s;
+  animation-delay: 0.9s;
 }
 
 .side-panel.open .skills-icon-row-wrapper {   // <-- updated
   animation: fadeInUp 1.4s ease-out forwards;
-  animation-delay: 0.8s;
+  animation-delay: 0.9s;
 }
 
 .side-panel.open .side-panel-form-inner {
   animation: fadeInUp 1.7s ease-out forwards;
-  animation-delay: 0.9s;
+  animation-delay: 0.10s;
 }
 
 /* RESPONSIVENESS */
