@@ -64,7 +64,7 @@ const ContactsPage = () => {
                   </defs>
                   </svg>
                 ),
-                href: "https://mail.google.com/mail/?view=cm&fs=1&to=cedrongeronimo@gmail.com",
+                href: "https://mail.google.com/mail/?view=cm&fs=1&to=r.cedric.geronimo@gmail.com",
               },
               {
                 label: "LinkedIn",
