@@ -19,7 +19,7 @@ const ProjectsPage = () => {
             title: "Spectron",
             subheader: "React   ·   ThreeJS  ·   GSAP  ·   Zustand   ·   SCSS  ·   Vite",
             content: [
-              "Spectron Portfolio is an interactive 3D web portfolio built using React, Three.js, and GSAP, designed to showcase background, skills, experience, and contact details through an immersive, game-like experience. Users can switch between two different scenes, allowing them to explore the environment from multiple perspectives. Smooth transitions and simple interactions make navigation feel natural and easy to follow. Content is presented through clean and user-friendly panels for better readability and organization. The 3D assets were created and optimized in Blender, ensuring a good balance between visual quality and performance.",
+              "Spectron is an interactive 3D web portfolio built using React, Three.js, and GSAP, designed to showcase background, skills, experience, and contact details through an immersive, game-like experience. Users can switch between two different scenes, allowing them to explore the environment from multiple perspectives. Smooth transitions and simple interactions make navigation feel natural and easy to follow. Content is presented through clean and user-friendly panels for better readability and organization. The 3D assets were created and optimized in Blender, ensuring a good balance between visual quality and performance.",
             ],
             buttons: [
               {
