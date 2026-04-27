@@ -19,7 +19,7 @@ const AboutPage = () => {
                 "I am an aspiring Frontend Web Developer focused on creating immersive 3D web experiences using modern frontend technologies. I strive to build responsive, interactive interfaces that prioritize performance and user experience. My interest in frontend web development has grown because it allows me to see my work and outcomes more immediately and directly than other programming languages. I work with my projects using React, Three.js, HTML, CSS, JavaScript, GSAP, and other frontend technologies. Moreover, I have proficiency in backend development, artificial intelligence, and data science, with experience in Python and PHP. Currently, I am seeking opportunities to further enhance my skills and contribute to projects that push the boundaries of interactive web design. Similarly, I am continuously working towards becoming a developer who values clean code, intuitive design, and meaningful user experiences."
               ],
               variant: "profile",
-              resumeHref: "/src/data/Geronimo_Resume.pdf",
+              resumeHref: "/Geronimo_Resume.pdf",
             },
             {
               imageSrc: "/images/About2.png",
