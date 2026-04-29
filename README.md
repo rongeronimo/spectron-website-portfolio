@@ -38,21 +38,31 @@ Modern-bohemian interiors embrace openness, light, and warmth, resulting in spac
 
 ## Loading Screen
 
+This provides a smooth entry experience by displaying a loading progress while assets are initializing. Once complete, it transitions into the scene following up with introductory texts with fade in & out animations to improve the overall experience.
+
 ![Loading Preview](public/gifs/loading.gif)
 
 ## Hoverable Grid Interaction
+
+Creates a trail-like effect on the ground as the cursor moves that enhances immersion and offers a sense of movement within the environment
 
 ![Grid Preview](public/gifs/gridinteraction.gif)
 
 ## Visual Indicators
 
+Uses subtle cues and highlights to signal interactive elements. It improves usability by providing instant and intuitive feedback that reduces mental effort and guides user actions without the need for complex instructions.
+
 ![Indicators Preview](public/gifs/indicators.gif)
 
 ## Hoverable Targets
 
+I created a bounds box with small extruded cubes on each side that will trigger a scale animation. This will signal the user that the area is clickable. It makes the user confident that their next click will be successful.
+
 ![Targets Preview](public/gifs/hovertargets.gif)
 
 ## Side Panels
+
+Shows the information via right side panel. 
 
 ![Panel Preview](public/gifs/sidepanel.gif)
 
