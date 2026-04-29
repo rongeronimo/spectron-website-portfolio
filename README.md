@@ -1,9 +1,12 @@
 # Spectron
 
-**[Live site](https://spectron-website-portfolio.vercel.app/)**
-Version: 1.0.0
+This repository contains the source code, assets, and documentation for Spectron, an interactive 3D web portfolio. Feel free to explore the project, review the implementation, and provide feedback 🫶
 
 ![Spectron Preview](public/images/Spectron.png)
+
+**[Live site](https://spectron-website-portfolio.vercel.app/)**
+
+Version: 1.0.0
 
 ### About Spectron
 
@@ -14,6 +17,22 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## ✨ Features
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Dark Scene
+
+## Light Scene
+
+## 🛠 Tech Stack
+
+## 💻 Device Compatibility
+
+## 📊 Performance
+
+## 🎨 3D Optimization & Pipeline
+
+## 🚀 Future Improvements
+
+## 🙌 Acknowledgements / Inspiration
