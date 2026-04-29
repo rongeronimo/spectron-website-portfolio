@@ -16,7 +16,11 @@ Spectron is a 3D portfolio built with React, Three.js, and GSAP, where users can
 
 ## Dark 
 
+![Dark](public/other/Dark.png)
+
 ## Light 
+
+![Light](public/other/Light.png)
 
 # ✨ Features ✨
 
