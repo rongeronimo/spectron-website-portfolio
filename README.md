@@ -1,6 +1,6 @@
 # Spectron
 
-**[Live site]([https://daniels-architects.com/](https://spectron-website-portfolio.vercel.app/))**
+**[Live site](https://spectron-website-portfolio.vercel.app/)**
 Version: 1.0.0
 
 ![Spectron Preview](public/images/Spectron.png)
