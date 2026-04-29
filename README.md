@@ -26,15 +26,27 @@ Spectron is a 3D portfolio built with React, Three.js, and GSAP, where users can
 
 ## Hoverable Grid Interaction
 
-## Hoverable Targets
+![Grid Preview](public/gifs/gridinteraction.gif)
 
 ## Visual Indicators
 
+![Indicators Preview](public/gifs/indicators.gif)
+
+## Hoverable Targets
+
+![Targets Preview](public/gifs/hovertargets.gif)
+
 ## Side Panels
+
+![Panel Preview](public/gifs/sidepanel.gif)
 
 ## Scene Transition
 
+![Scene Transition](public/gifs/scenetransition.gif)
+
 ## Quick Menu
+
+![Menu Preview](public/gifs/quickmenu.gif)
 
 # 🛠 Tech Stack 🛠
 
