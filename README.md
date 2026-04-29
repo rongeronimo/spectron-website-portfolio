@@ -14,13 +14,15 @@ Spectron is a 3D portfolio built with React, Three.js, and GSAP, where users can
 
 # 🖤 Scenes 🤍
 
-## Dark Scene
+## Dark 
 
-## Light Scene
+## Light 
 
 # ✨ Features ✨
 
 ## Loading Screen
+
+![Loading Preview](public/gifs/loading.gif)
 
 ## Hoverable Grid Interaction
 
