@@ -14,6 +14,10 @@ Spectron is a 3D portfolio built with React, Three.js, and GSAP, where users can
 
 # 🖤 Scenes 🤍
 
+One of the most important principles in Web Development is user experience. Every decision is made to guide, engage, and support the user effectively, especially in design. This intentionality ensures that a digital environment feels intuitive rather than erratic, reflecting how we curate our physical world. Just as a developer optimizes a virtual interface to maximize user flow, the organization of our physical environment influences our mental well-being.
+
+Interior design has a psychological impact on daily life by influencing mood, behavior, and mental health through environmental factors such as lighting, color, and layout. That is why I decided to design both scenes based on real-world interior designs, because it bridges the gap between digital interaction and human emotion, ensuring the viewer feels grounded in a space that is not only functional but also psychologically resonant.
+
 ## Dark 
 
 This presents a modern and moody interior workspace, designed with a strong emphasis on atmosphere, personality, and organized aesthetic. It blends elements of contemporary, industrial, and minimalist design to create a space that feels both structured and expressive.
