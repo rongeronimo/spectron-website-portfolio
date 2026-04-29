@@ -12,24 +12,34 @@ Version: 1.0.0
 
 Spectron is a 3D portfolio built with React, Three.js, and GSAP, where users can navigate through an interactive 3D environment to view my background, skills, experience, and contact details. Instead of presenting information in a linear format, the project allows users to explore content spatially, making the experience more engaging and memorable.
 
-# ✨ Features
+# ✨ Features ✨
 
 ## Hoverable Grid Interaction
 
 ## Hoverable Targets
 
+## Visual Indicators
+
+## Side Panels
+
+## Scene Transition
+
+## Quick Menu
+
+# 🖤 Scenes 🤍
+
 ## Dark Scene
 
 ## Light Scene
 
-## 🛠 Tech Stack
+# 🛠 Tech Stack 🛠
 
-## 💻 Device Compatibility
+# 💻 Device Compatibility 🖥️
 
-## 📊 Performance
+# 📊 Performance 📉
 
-## 🎨 3D Optimization & Pipeline
+# 🎨 3D Optimization & Pipeline 🧑‍🎨
 
-## 🚀 Future Improvements
+# 🚀 Future Improvements 🚀
 
-## 🙌 Acknowledgements / Inspiration
+## 🙌 Acknowledgements / Inspiration 🫶
