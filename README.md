@@ -1,12 +1,47 @@
-# React + Vite
+# Spectron — a 3D Interactive Web Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code, assets, and documentation for Spectron. Feel free to explore the project, review the implementation, and provide feedback 🫶
 
-Currently, two official plugins are available:
+![Spectron Preview](public/images/Spectron.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**[Live Website](https://spectron-website-portfolio.vercel.app/)**
 
-## Expanding the ESLint configuration
+Version: 1.0.0
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## About Spectron
+
+Spectron is a 3D portfolio built with React, Three.js, and GSAP, where users can navigate through an interactive 3D environment to view my background, skills, experience, and contact details. Instead of presenting information in a linear format, the project allows users to explore content spatially, making the experience more engaging and memorable.
+
+# 🖤 Scenes 🤍
+
+## Dark Scene
+
+## Light Scene
+
+# ✨ Features ✨
+
+## Loading Screen
+
+## Hoverable Grid Interaction
+
+## Hoverable Targets
+
+## Visual Indicators
+
+## Side Panels
+
+## Scene Transition
+
+## Quick Menu
+
+# 🛠 Tech Stack 🛠
+
+# 💻 Device Compatibility 🖥️
+
+# 📊 Performance 📉
+
+# 🎨 3D Optimization & Pipeline 🧑‍🎨
+
+# 🚀 Future Improvements 🚀
+
+# 🙌 Acknowledgements / Inspiration 🫶
