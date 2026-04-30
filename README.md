@@ -8,18 +8,18 @@ This repository contains the source code, assets, and documentation for Spectron
 
 Version: 1.0.0
 
-## Table of Contents
+# Table of Contents
 * [About Spectron](#about-spectron)
 * [Scenes](#-scenes-)
 * [Features](#-features-)
 * [Tech Stack](#-tech-stack-)
-* [Device Compatibility](#-device-compatibility-)
+* [Device Compatibility](#-device-compatibility-%EF%B8%8F)
 * [Performance](#-performance-)
-* [3D Optimization & Pipeline](#-3d-optimization--pipeline-%E2%80%8D)
+* [3D Optimization & Pipeline](#-3d-production-pipeline-%E2%80%8D)
 * [Future Improvements](#-future-improvements-)
 * [Acknowledgements / Inspiration](#-acknowledgements--inspiration-)
 
-## About Spectron
+# About Spectron
 
 Spectron is a 3D portfolio built with React, Three.js, and GSAP, where users can navigate through an interactive 3D environment to view my background, skills, experience, and contact details. Instead of presenting information in a linear format, the project allows users to explore content spatially, making the experience more engaging and memorable. The application features two switchable scenes, Dark and Light, designed to reflect the familiar experience of toggling between dark mode and light mode in everyday applications.
 
@@ -128,7 +128,22 @@ Provides fast access to key sections. With this, it improves the navigation with
 
 # 📊 Performance 📈
 
-# 🎨 3D Optimization & Pipeline 🧑‍🎨
+- Maintains **~60–144 FPS** during real-time interaction
+- Peaks at 144 FPS on **ASUS TUF Dash F15 (RTX 3050, i5)**
+
+# 🎨 3D Production Pipeline 🧑‍🎨
+
+## Rapid Prototyping
+
+## Ground Plane Adjustment
+
+## Texture Baking
+
+## Compression & Exporting
+
+## Web Integration
+
+## Retopology
 
 ## Modeling the Targets 
 
@@ -136,7 +151,9 @@ In the hovering targets feature, to be able to trigger a scaling animation, I mo
 
 ![Cubes Preview](public/other/hovertargetsblender.png)
 
-Photo from Blender.
+## Scene Transition Overview
+
+
 # 🚀 Future Improvements 🚀
 
 # 🙌 Acknowledgements / Inspiration 🫶
