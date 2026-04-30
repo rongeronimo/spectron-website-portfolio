@@ -10,14 +10,14 @@ Version: 1.0.0
 
 ## Table of Contents
 * [About Spectron](#about-spectron)
-* [Scenes](#scenes)
-* [Features](#features)
-* [Tech Stack](#tech-stack)
-* [Device Compatibility](#device-compatibility)
-* [Performance](#performance)
-* [3D Optimization & Pipeline](#3d-optimization--pipeline)
-* [Future Improvements](#future-improvements)
-* [Acknowledgements / Inspiration](#acknowledgements--inspiration)
+* [Scenes](#-scenes-)
+* [Features](#-features-)
+* [Tech Stack](#-tech-stack-)
+* [Device Compatibility](#-device-compatibility-)
+* [Performance](#-performance-)
+* [3D Optimization & Pipeline](#-3d-optimization--pipeline-)
+* [Future Improvements](#-future-improvements-)
+* [Acknowledgements / Inspiration](#-acknowledgements--inspiration-)
 
 ## About Spectron
 
