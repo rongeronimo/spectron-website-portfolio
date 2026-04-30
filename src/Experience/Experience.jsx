@@ -25,7 +25,7 @@ const Experience = () => {
     default: isMobile
       ? 66     // Phones
       : isTablet
-      ? 85     // Tablets ✅ NEW proper layer
+      ? 85     // Tablets NEW proper layer
       : isLaptop
       ? 95     // Laptops
       : 110,  // Desktop

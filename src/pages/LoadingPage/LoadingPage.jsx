@@ -42,7 +42,7 @@ const LoadingPage = ({ onComplete }) => {
   const progressBar = useRef(null);
   const messageRef = useRef(null);
 
-  // ✅ Wrap animation in useCallback for stable reference
+  //  Wrap animation in useCallback for stable reference
   const runWelcomeAnimation = useCallback(() => {
     const tl = gsap.timeline();
 
