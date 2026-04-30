@@ -15,7 +15,7 @@ Version: 1.0.0
 * [Tech Stack](#-tech-stack-)
 * [Device Compatibility](#-device-compatibility-%EF%B8%8F)
 * [Performance](#-performance-)
-* [3D Optimization & Pipeline](#-3d-production-pipeline-%E2%80%8D)
+* [3D Production Pipeline](#-3d-production-pipeline-%E2%80%8D)
 * [Future Improvements](#-future-improvements-)
 * [Acknowledgements / Inspiration](#-acknowledgements--inspiration-)
 
