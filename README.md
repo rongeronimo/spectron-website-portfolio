@@ -110,7 +110,7 @@ Provides fast access to key sections. With this, it improves the navigation with
 
 ## [Blender](https://www.blender.org/)
 - 3D modeling, asset optimization, texture baking, and scene preparation before integration into the web environment.
-- Blender Version: 4.5
+- Blender Version: 4.5.1
 
 **Addons Used:**
 
