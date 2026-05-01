@@ -25,9 +25,9 @@ Spectron is a 3D portfolio built with React, Three.js, and GSAP, where users can
 
 # 🖤 Scenes 🤍
 
-One of the most important principles in Web Development is user experience. Every decision is made to guide, engage, and support the user effectively, especially in design. This intentionality ensures that a digital environment feels intuitive rather than erratic, reflecting how we curate our physical world. Just as a developer optimizes a virtual interface to maximize user flow, the organization of our physical environment influences our mental well-being.
+One of the most important principles in Web Development is **user experience**. Every decision is made to guide, engage, and support the user effectively, especially in design. This intentionality ensures that a digital environment feels intuitive rather than chaotic. The way we design reflects how we curate our physical world. Similarly, optimizing an interface to enhance user flow is comparable to organizing a physical environment, as both influence overall well-being.
 
-Interior design has a psychological impact on daily life by influencing mood, behavior, and mental health through environmental factors such as lighting, color, and layout. That is why I decided to design both scenes based on real-world interior designs, because it bridges the gap between digital interaction and human emotion, ensuring the viewer feels grounded in a space that is not only functional but also psychologically resonant.
+Interior design has a psychological impact on daily life. It influences mood, behavior, and mental health through environmental factors such as lighting, color, and layout. This is why I decided to design both scenes based on real-world interior designs. By doing so, the experience bridges the gap between digital interaction and human emotion, ensuring the viewer feels grounded in a space that is not only functional but also psychologically resonant.
 
 ## Dark 
 
@@ -187,7 +187,7 @@ Aside from face orientation, ensure all meshes are converted to mesh with [Conve
 
 Unwrap the mesh and arrange it in a 2D structure so that textures are appropriately projected onto the surface. Proper UV organization reduces stretching, prevents overlapping, and ensures constant texture detail throughout the model. To easily work with this, I used the [G-Ready](https://faridmammadov.gumroad.com/l/G-Ready) addon with auto UV, packing, average scale islands, and other tools. 
 
-### Bake it!
+### Bake It!
 ![Baking](public/gifs/texturebaking.gif)
 
 After all is set, use a good baking addon such as [SimpleBake](https://superhivemarket.com/products/simplebake---simple-pbr-and-other-baking-in-blender-2). Prepare presets from 1k - 4k. In my case, I only used 1k to 2k to prioritize the performance of the website. 
@@ -213,36 +213,69 @@ After all is set, use a good baking addon such as [SimpleBake](https://superhive
 ### Compositing
 ![Composite](public/other/compositing.png)
 
-Baked textures were processed in EXR format to retain high dynamic range. Use Nlender's compositor by the applying denoise node to reduce noise artifacts and improve overall texture clarity. Export using PNG as format in  the denoised EXR image.
+Baked textures were processed in EXR format to retain high dynamic range. Use Blender's compositor by applying the [denoise](https://docs.blender.org/manual/en/latest/compositing/types/filter/denoise.html) node to reduce noise artifacts and improve overall texture. Export using PNG as format in the denoised EXR image.
 
 ## Compression & Results
 ![Compress](public/other/compression.png)
 
-Compress your PNG bakes using [Squoosh](https://squoosh.app/). Use Webp as a format as it offers 25% to 50% smaller file sizes compared to PNG. Reducing the file size of your texture images will help improve the performance in the long run.
+Compress your PNG bakes using [Squoosh](https://squoosh.app/). Use WebP as a format as it offers 25% to 50% smaller file sizes compared to PNG. Reducing the file size of your texture images will help improve the performance in the long run.
 
 ![Final](public/other/finalresult.png)
 
-The assets are now fully prepared for web integration. It achieved a balance between visual realism and performance suitable for real-time rendering.
+Change the current image node and use the WebP image. The assets are now fully prepared for web integration. It achieved a balance between visual realism and performance that is suitable for real-time rendering.
 
 ## Web Integration
 
+Separate the scene into different areas (workplace area, resting area, art section, etc.) as it will be exported into separated GLB files. Join all meshes within that area and export it into the lowest material quality you like (in my case, I put 75).
+
+![Draco](public/other/draco.png)
+
+Use [glTF Report](https://gltf.report/) to apply [Draco](https://threejs.org/examples/jsm/libs/draco/) compression to the GLB file. TThis reduces file size and improves loading performance, which will largely contribute to the performance of your website.
+
+```
+npx gltfjsx @6.5.3 Model.glb
+```
+To import it to your website, use [gltfjsx](https://github.com/pmndrs/gltfjsx) to convert the .glb file into a JSX component. After that, you can now work on converting each material to MeshBasic as it is MeshStandard in default.
+
 ## Retopology
+
+There are cases where a mesh may appear visually inconsistent or overly complex when integrated into a web environment. In addition, high polygon counts can lead to increased memory usage and reduced performance. To address these issues, retopology is applied to simplify geometry while preserving the overall shape and visual quality of the model, which makes it more suitable for real-time rendering. 
+
+The following techniques can be applied depending on the specific issue encountered:
 
 ### Decimate
 ![Decimate](public/gifs/decimate.gif)
 
+A modifier that reduces polygon count by simplifying the mesh while maintaining its general form. This is useful for optimizing complex models that do not require high geometric detail in real-time applications.
+
 ### Unsubdivide
 ![Unsubdivide](public/gifs/unsubdivide.gif)
+
+Simplifies topology by reversing subdivision patterns, producing a cleaner and more uniform mesh. This helps maintain structure while reducing unnecessary geometry.
+
+### Asset Swapping
+
+Replaces high-poly or complex models with lower-poly alternatives that are more suitable for real-time rendering. This approach ensures better performance while preserving the visual intent of the scene. You can find asset alternatives to the resources I listed in [rapid prototyping](#rapid-prototyping).
 
 ## Modeling the Targets 
 
 ![Cubes Preview](public/other/hovertargetsblender.png)
 
-In the hovering targets feature, to be able to trigger a scaling animation, I modeled multiple cubes displayed in view port as bounds as base with small extruded cubes on each side. Set geometry to origin so that when the scaling animation is coded, the cube is expected to shrink/expand starting from the middle of the mesh.
+(Photo from the old Dark Scene model)
+
+In the [hoverable targets](#hoverable-targets) feature, to be able to trigger a scaling animation, I modeled the base with a cube displayed in view port as bounds with small extruded cubes on each side. Set geometry to origin so that when the scaling animation is coded, the cube is expected to shrink/expand starting from the middle of the mesh. Apply to all desired areas.
 
 ## Scene Transition Overview
 
 ![Transition](public/other/transitionblender.png)
+
+To explain the feature in the most simplest way.
+
+The [scene transition](#scene-transition) is handled through controlled movement of an orthographic camera between predefined positions. Each scene (e.g., light and dark) has a specific set of coordinates (x,y,z) that serves as the camera’s target location. When a trigger (such as a button) is activated, the camera is programmatically translated from its current position toward the target coordinates. The movement continues until the camera reaches this exact position, effectively switching the user’s view from one scene to another.
+
+This approach keeps the transition logic simple rather than loading or swapping scenes. The system reuses a single camera and moves it back and forth between two fixed points. The reverse transition follows the same process, returning the camera to its original coordinates.
+
+To maintain visual smoothness, an overlay is temporarily applied during the camera movement. This prevents users from noticing any stutter or intermediate rendering inconsistencies, ensuring that the transition feels seamless and controlled.
 
 # 🚀 Future Improvements 🚀
 
