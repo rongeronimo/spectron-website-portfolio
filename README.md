@@ -135,15 +135,35 @@ Provides fast access to key sections. With this, it improves the navigation with
 
 ## Rapid Prototyping
 
+![RapidPrototype](public/gifs/rapidprototyping.gif)
+
 ## Ground Plane Adjustment
+
+![Plane](public/other/groundplane.png)
 
 ## Texture Baking
 
+![Faces](public/other/faceorient.png)
+
+![Steps](public/other/bakingsteps.png)
+
+![Baking](public/gifs/texturebaking.gif)
+
+![Composite](public/other/compositing.png)
+
 ## Compression & Exporting
+
+![Compress](public/other/compression.png)
+
+![Final](public/other/finalresult.png)
 
 ## Web Integration
 
 ## Retopology
+
+![Decimate](public/gifs/decimate.gif)
+
+![Unsubdivide](public/gifs/unsubdivide.gif)
 
 ## Modeling the Targets 
 
@@ -152,6 +172,8 @@ In the hovering targets feature, to be able to trigger a scaling animation, I mo
 ![Cubes Preview](public/other/hovertargetsblender.png)
 
 ## Scene Transition Overview
+
+![Transition](public/other/transitionblender.png)
 
 
 # 🚀 Future Improvements 🚀
