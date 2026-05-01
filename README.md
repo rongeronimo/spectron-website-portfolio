@@ -232,10 +232,16 @@ Separate the scene into different areas (workplace area, resting area, art secti
 
 Use [glTF Report](https://gltf.report/) to apply [Draco](https://threejs.org/examples/jsm/libs/draco/) compression to the GLB file. TThis reduces file size and improves loading performance, which will largely contribute to the performance of your website.
 
+To import it to your website, use [gltfjsx](https://github.com/pmndrs/gltfjsx) to convert the .glb file into a JSX component. After that, you can now work on converting each material to MeshBasic as it is MeshStandard in default. Putting version number in the command is **NOT** necessary. In my case, the command didn't work without version number so I put one. For this, I use version 6.5.3.
+
 ```
-npx gltfjsx @6.5.3 Model.glb
+npx gltfjsx Model.glb
 ```
-To import it to your website, use [gltfjsx](https://github.com/pmndrs/gltfjsx) to convert the .glb file into a JSX component. After that, you can now work on converting each material to MeshBasic as it is MeshStandard in default.
+or
+
+```
+npx gltfjsx @version Model.glb
+```
 
 ## Retopology
 
