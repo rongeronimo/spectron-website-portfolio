@@ -269,7 +269,7 @@ Replaces high-poly or complex models with lower-poly alternatives that are more 
 
 (Photo from the old Dark Scene model)
 
-In the [hoverable targets](#hoverable-targets) feature, to be able to trigger a scaling animation, I modeled the base with a cube displayed in view port as bounds with small extruded cubes on each side. Set geometry to origin so that when the scaling animation is coded, the cube is expected to shrink/expand starting from the middle of the mesh. Apply to all desired areas.
+In the [hoverable targets](#hoverable-targets) feature, to be able to trigger a scaling animation, I modeled the base with a cube displayed in view port as bounds with small extruded cubes (extrude under, left, and right faces, making it look like a "T" shape) on each side. Set geometry to origin so that when the scaling animation is coded, the cube is expected to shrink/expand starting from the middle of the mesh. Apply to all desired areas.
 
 ## Scene Transition Overview
 
@@ -282,6 +282,8 @@ The [scene transition](#scene-transition) is handled through controlled movement
 This approach keeps the transition logic simple rather than loading or swapping scenes. The system reuses a single camera and moves it back and forth between two fixed points. The reverse transition follows the same process, returning the camera to its original coordinates.
 
 To maintain visual smoothness, an overlay is temporarily applied during the camera movement. This prevents users from noticing any stutter or intermediate rendering inconsistencies, ensuring that the transition feels seamless and controlled.
+
+This will also explain how important it is to ensure that each object is placed at its precise position before exporting. The image above shows how your scenes will look after export. Referring back to [Web Integration](#web-integration), you will be exporting your assets into separate sections, so accuracy is essential since this will serve as your reference for organizing the scene structure
 
 # 🚀 Future Improvements 🚀
 - Even though it is normal for the website to obtain a high memory usage, it uses **2.5gb** which is moderately high. It would be much better if the tab uses only **1gb** to maximize the performance.
