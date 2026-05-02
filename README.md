@@ -143,13 +143,13 @@ This is a general approach that I adapted from [Andrew Woan](https://github.com/
 
 - Reducing anxiety in both parties
 
-Rapid prototyping helps ease both developer and client uncertainty by providing something tangible early in the process. Instead of relying on abstract ideas, stakeholders can see real progress, which builds confidence and establishes trust. This is especially important in team settings, where differing priorities or dependencies can create delays—having a working prototype keeps everyone aligned and reassured.
+Rapid prototyping helps ease both developer and client uncertainty by providing something tangible early in the process. Instead of relying on abstract ideas, stakeholders can see real progress, which builds confidence and establishes trust. This is especially important in team settings, where differing priorities or dependencies can create delays. Having a working prototype keeps everyone aligned and reassured.
 
 - Bypassing Blockers
 
 Rather than waiting for all assets or inputs to be finalized, rapid prototyping allows you to move forward by building a functional foundation in advance. Core architecture, logic, and flow can be developed using temporary placeholders, such as simplified 3D models. While not visually polished, these stand-ins enable continuous progress, so when final assets are delivered, they can be integrated quickly with minimal changes.
 
-A key consideration in Rapid Prototyping is how well your output facilitates collaboration with the client. Early, flexible versions make it easier to accommodate on-the-spot feedback, allowing changes to be made without disrupting a fully polished system. In contrast, presenting something too finalized too soon can lead to costly revisions if expectations don’t align.
+A key consideration in Rapid Prototyping is how well your output facilitates collaboration with the client. Initially, flexible versions make it easier to accommodate on-the-spot feedback, allowing changes to be made without disrupting a fully polished system. In contrast, presenting something too finalized too soon can lead to costly revisions if expectations don’t align.
 
 While design is naturally iterative, development often requires careful time estimation. It is something that improves with experience but is never perfectly predictable. Unexpected challenges will always arise. Rapid prototyping addresses this by encouraging continuous creation over hesitation, shifting the focus away from perfectionism and toward progress. This mindset enables faster adaptation, smoother revisions, and a more resilient development process overall.
 
@@ -230,7 +230,7 @@ Separate the scene into different areas (workplace area, resting area, art secti
 
 ![Draco](public/other/draco.png)
 
-Use [glTF Report](https://gltf.report/) to apply [Draco](https://threejs.org/examples/jsm/libs/draco/) compression to the GLB file. TThis reduces file size and improves loading performance, which will largely contribute to the performance of your website.
+Use [glTF Report](https://gltf.report/) to apply [Draco](https://threejs.org/examples/jsm/libs/draco/) compression to the GLB file. This reduces file size and improves loading performance, which will largely contribute to the performance of your website.
 
 To import it to your website, use [gltfjsx](https://github.com/pmndrs/gltfjsx) to convert the .glb file into a JSX component. After that, you can now work on converting each material to MeshBasic as it is MeshStandard in default. Putting version number in the command is **NOT** necessary. In my case, the command didn't work without version number so I put one. For this, I use version 6.5.3.
 
@@ -284,5 +284,20 @@ This approach keeps the transition logic simple rather than loading or swapping 
 To maintain visual smoothness, an overlay is temporarily applied during the camera movement. This prevents users from noticing any stutter or intermediate rendering inconsistencies, ensuring that the transition feels seamless and controlled.
 
 # 🚀 Future Improvements 🚀
+- Even though it is normal for the website to obtain a high memory usage, it uses **2.5gb** which is moderately high. It would be much better if the tab uses only **1gb** to maximize the performance.
+- The main reason the website uses high memory usage is due to the complexity of the models of each scenes. One key mistake I had done here is I modeled the scene without considering how it will perform when integrated. I got carried away putting too much polygon counts on each scenes such as too much objects/details in one area. In future versions, I might settle for an in-depth retopology to further improve the performance if time allows.
+- Texture compression is another area for improvement. Implementing [KTX2](https://github.khronos.org/KTX-Specification/ktxspec.v2.html) could significantly reduce texture size and memory usage which will improve performance.
+- **Mobile support** is not yet optimized. Expanding compatibility for mobile devices will be an important step to improve accessibility and reach.
+- Adding an optional **audio system** could enhance immersion. This allows users to toggle background sound or ambient effects on and off based on their preference.
+- **Additional object movements and environmental animations** could make the scene feel more alive.
+- The quick menu remains accessible even when a section is open, but transitions between sections are currently abrupt. Navigating to another section simply replaces the content without a **visual transition**. Adding a **close-and-open transition** between sections could improve flow and make the experience feel more cohesive.
 
 # 🙌 Acknowledgements / Inspiration 🫶
+
+This project was largely inspired by the works of [Andrew Woan](https://github.com/andrewwoan), especially in the way he approaches interactive 3D experiences on the web. Seeing how immersive environments can be combined with web development pushed me to explore beyond traditional portfolio formats and experiment with creating something more engaging and spatial. His work splayed a big role in shaping the direction and vision of this project. I’m also thankful for the techniques and ideas I was able to learn from his works. It contributed substantially to the overall execution and success of the project.
+
+I’d also like to acknowledge my friends and family for their constant support throughout the development process. Whether it was through feedback, encouragement, or simply being patient during long development hours, they played an important role in helping me stay motivated and continue improving the project.
+
+Special thanks to [Chester Gulmatico](https://www.linkedin.com/in/chester-gulmatico/) for helping with quality assurance and identifying issues I initially overlooked, such as missing refresh handling in the Vercel deployment and other edge cases. His feedback contributed to improving the stability and overall reliability of the application.
+
+Lastly, both the Blender Community and the Three.js community have been invaluable resources throughout this project. From tutorials and shared workflows to problem-solving discussions, they helped me better understand real-time rendering, optimization techniques, how to bring 3D experiences effectively into the web environment, and all other things I need to work on for the success of the project.
