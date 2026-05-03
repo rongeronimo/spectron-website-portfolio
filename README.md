@@ -297,7 +297,7 @@ This will also explain how important it is to ensure that each object is placed 
 
 # 🙌 Acknowledgements / Inspiration 🫶
 
-This project was largely inspired by the works of [Andrew Woan](https://github.com/andrewwoan), especially in the way he approaches interactive 3D experiences on the web. Seeing how immersive environments can be combined with web development pushed me to explore beyond traditional portfolio formats and experiment with creating something more engaging and spatial. His work splayed a big role in shaping the direction and vision of this project. I’m also thankful for the techniques and ideas I was able to learn from his works. It contributed substantially to the overall execution and success of the project.
+This project was largely inspired by the works of [Bruno Simon](https://github.com/brunosimon) and [Andrew Woan](https://github.com/andrewwoan), especially in the way they approach interactive 3D experiences on the web. Seeing how immersive environments can be combined with web development pushed me to explore beyond traditional portfolio formats and experiment with creating something more engaging and spatial. Their works played a big role in shaping the direction and vision of this project. I’m also thankful for the techniques and ideas I was able to learn from their works. It contributed substantially to the overall execution and success of the project.
 
 I’d also like to acknowledge my friends and family for their constant support throughout the development process. Whether it was through feedback, encouragement, or simply being patient during long development hours, they played an important role in helping me stay motivated and continue improving the project.
 
