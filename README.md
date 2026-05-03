@@ -301,6 +301,6 @@ This project was largely inspired by the works of [Bruno Simon](https://github.c
 
 I’d also like to acknowledge my friends and family for their constant support throughout the development process. Whether it was through feedback, encouragement, or simply being patient during long development hours, they played an important role in helping me stay motivated and continue improving the project.
 
-Special thanks to [Chester Gulmatico](https://www.linkedin.com/in/chester-gulmatico/) for helping with quality assurance and identifying issues I initially overlooked, such as missing refresh handling in the Vercel deployment and other edge cases. His feedback contributed to improving the stability and overall reliability of the project.
+Special thanks to [Chester Gulmatico](https://www.linkedin.com/in/chester-gulmatico/) and [Alvin Cedric Villanueva](https://www.linkedin.com/in/cedorikkun/) for helping with quality assurance and identifying issues I initially overlooked, such as missing refresh handling in the Vercel deployment and other edge cases. His feedback contributed to improving the stability and overall reliability of the project.
 
 Lastly, both the Blender Community and the Three.js community have been invaluable resources throughout this project. From tutorials and shared workflows to problem-solving discussions, they helped me better understand real-time rendering, optimization techniques, how to bring 3D experiences effectively into the web environment, and all other things I need to work on for the success of the project.
