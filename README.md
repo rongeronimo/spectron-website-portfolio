@@ -45,6 +45,14 @@ Modern-bohemian interiors embrace openness, light, and warmth, resulting in spac
 
 ![Light](public/other/Light.png)
 
+## 3D Rendering
+
+It is important to take note that this project is a **web portfolio**, so all 3D assets were created and optimized in Blender. High-resolution textures (up to 4K) were baked into optimized lower-resolution maps, while meshes were simplified through retopology to improve runtime performance for web integration. Because of these optimizations, some visual differences exist compared to the original renders inside Blender.
+
+Check out this link for the render gallery!
+
+**[3D Renders](https://www.linkedin.com/feed/update/urn:li:groupPost:6677523-7459601632033501184?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEzL4SUBAVnJcT2sWcXiFWAWZYMVbYpFJkQ)**
+
 # ✨ Features ✨
 
 ## Loading Screen
