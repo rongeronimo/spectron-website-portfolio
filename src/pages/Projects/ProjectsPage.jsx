@@ -29,6 +29,38 @@ const ProjectsPage = () => {
             ],
           },
           {
+            imageSrc: "/images/VietRestaurant.png",
+            title: "Nhà Hàng",
+            subheader: "React   ·   TypeScript  ·   Next.js  ·   Bootstrap   ·   GLightbox  ·   Swiper",
+            content: [
+              "A responsive Vietnamese restaurant mock website built with Next.js, React, TypeScript, and Bootstrap, designed to showcase a modern Vietnamese dining experience through an elegant and interactive interface. The project features dedicated sections for the restaurant's menu, specials, events, reviews, gallery, chefs, contact information, and table reservations, with reusable React components and dynamic content handling. Interactive elements such as image galleries, sliders, and lightbox displays were implemented to create a more engaging user experience.",
+            ],
+            buttons: [
+              {
+                label: "GitHub",
+                href: "https://github.com/rongeronimo/vietnamese-restaurant-mock-website",
+              },
+            ],
+          },
+          {
+            imageSrc: "/images/MythicalAtlas.png",
+            title: "Mythical Atlas",
+            subheader: "HTML   ·   JavaScript  ·   CSS  ·   GSAP   ·   Scrolltrigger  ·   Lenis   ·   SplitText",
+            content: [
+              "Mythical Atlas is an interactive frontend concept website developed to showcase modern web development techniques using HTML, CSS, JavaScript, GSAP, ScrollTrigger, Lenis, and SplitText. The project serves as a reusable scroll-driven storytelling template featuring dynamic theme transitions, multilingual text animations, responsive multimedia layouts, and smooth user interactions.",
+            ],
+            buttons: [
+              {
+                label: "Website",
+                href: "https://mythical-atlas-self.vercel.app/",
+              },
+              {
+                label: "GitHub",
+                href: "https://github.com/rongeronimo/mythical-atlas",
+              },
+            ],
+          },
+          {
             imageSrc: "/images/EmoWarn.png",
             title: "EmoWarn",
             subheader: "HTML   ·   CSS  ·   Python   ·   Flask",
