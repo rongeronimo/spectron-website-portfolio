@@ -37,6 +37,10 @@ const ProjectsPage = () => {
             ],
             buttons: [
               {
+                label: "Website",
+                href: "https://vietnamese-restaurant-mock-website-iota.vercel.app/",
+              },
+              {
                 label: "GitHub",
                 href: "https://github.com/rongeronimo/vietnamese-restaurant-mock-website",
               },
